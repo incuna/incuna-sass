@@ -1,0 +1,13 @@
+// Replace text content on block level elements.
+// It is generally to add sprites/background images to the element.
+%image-replace
+    background-color: transparent
+    border: 0
+    overflow: hidden
+    &:before
+        content: ""
+        display: block
+        width: 0
+        height: 100%
+    .lt-ie8 &
+        text-indent: -9999px
