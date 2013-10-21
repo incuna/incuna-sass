@@ -1,0 +1,10 @@
+%inline-block
+    display: inline-block
+    vertical-align: middle
+    @if $project == 'web'
+        display: -moz-inline-box
+        -moz-box-orient: vertical
+        .lt-ie8 &
+            display: inline
+            vertical-align: auto
+            zoom: 1
