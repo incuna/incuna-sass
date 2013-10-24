@@ -1,3 +1,5 @@
+@import "compass/support";
+
 // normalize.css - http://git.io/normalize
 // v2.1.3
 // License: MIT License
@@ -31,8 +33,9 @@ html
 // Links
 
 // Remove the gray background color from active links in IE 10.
-a
-    background: transparent
+@if support-legacy-browser("ie", "10")
+    a
+        background: transparent
 
 // Improve readability when focused and also mouse hovered in all browsers.
 a:active,
@@ -56,7 +59,7 @@ dfn
 
 // Address differences between Firefox and other browsers.
 hr
-    @include box-sizing(content-box)
+    @extend %content-box
     height: 0
 
 // Address styling not present in IE 8/9.
@@ -101,8 +104,9 @@ sub
 // Embedded content
 
 // Correct overflow displayed oddly in IE 9.
-svg:not(:root)
-    overflow: hidden
+@if support-legacy-browser("ie", "9")
+    svg:not(:root)
+        overflow: hidden
 
 // Forms
 
@@ -138,9 +142,10 @@ html input[disabled]
     cursor: default
 
 // 1. Address box sizing set to `content-box` in IE 8/9/10.
-input[type="checkbox"],
-input[type="radio"]
-    @include box-sizing(border-box) // 1
+@if support-legacy-browser("ie", "8", "10")
+    input[type="checkbox"],
+    input[type="radio"]
+        @extend %border-box // 1
 
 // 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
 // 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
@@ -156,10 +161,11 @@ input[type="search"]::-webkit-search-decoration
     -webkit-appearance: none
 
 // Remove inner padding and border in Firefox 4+.
-button::-moz-focus-inner,
-input::-moz-focus-inner
-    border: 0
-    padding: 0
+@if support-legacy-browser("firefox", "4")
+    button::-moz-focus-inner,
+    input::-moz-focus-inner
+        border: 0
+        padding: 0
 
 // 1. Remove default vertical scrollbar in IE 8/9.
 // 2. Improve readability and alignment in all browsers.
