@@ -3,3 +3,13 @@
 //      - 'epatient'
 // 'edetail'
 
+// eDetails are developed exclusively on OSX 10.9+
+// Webkit browsers are used in development and deployment is
+// currently iOS5+
+@if $project = 'edetail'
+    $supported-browsers = ("chrome", "ios-safari", "safari")
+    $browser-minimum-versions: (
+        "chrome": "29",
+        "ios-safari": "5.0-5.1",
+        "safari": "7"
+    )
