@@ -1,0 +1,9 @@
+%clearfix
+    @if support-legacy-browser("ie", "7")
+        .lt-ie8 &
+            zoom: 1
+    &:before, &:after
+        content: ""
+        display: table
+    &:after
+        clear: both
