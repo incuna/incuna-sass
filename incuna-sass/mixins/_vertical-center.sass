@@ -3,12 +3,10 @@
 %vertical-center
     font:
         size: 0
-
     $selector: "&:before"
     @if support-legacy-browser("ie", "7")
         $selector: "&:before, .before"
         @extend %pseudo-before
-
     #{$selector}
         content: ''
         @extend %inline-block
