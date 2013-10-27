@@ -3,6 +3,22 @@
 //      - 'epatient'
 // 'edetail'
 
+// The following function is a monkey patch of the core version.
+// I have rasised a ticket to get it fixed https://github.com/chriseppstein/compass/issues/1426
+// When the fix is in a release then remove this.
+
+// Check whether the browser is supported according to the declared minimum support
+// and usage thresholds.
+@function support-legacy-browser($browser, $min-version, $max-version: null, $threshold: $critical-usage-threshold)
+    // Check if the browser should be supported
+    @if index($supported-browsers, $browser) == false
+        @return false
+    @else
+        // Check agaist usage stats and declared minimums
+        $min-required-version: map-get($browser-minimum-versions, $browser)
+        $usage: if($max-version, omitted-usage($browser, $min-version, $max-version), omitted-usage($browser, $min-version))
+        @return $usage > $threshold or ($min-required-version and compare-browser-versions($browser, $max-version or $min-version, $min-required-version) >= 0)
+
 // eDetails are developed exclusively on OSX 10.9+
 // Webkit browsers are used in development and deployment is
 // currently iOS5+
