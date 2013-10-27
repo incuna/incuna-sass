@@ -1,0 +1,8 @@
+@mixin media($expression)
+    @media #{$expression}
+        @content
+
+// HiDPI displays - https://github.com/h5bp/html5-boilerplate/issues/1127 and http://core.trac.wordpress.org/changeset/22629
+$hidpi: "print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)"
+// Print
+$print: "print"
