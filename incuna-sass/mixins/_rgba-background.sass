@@ -1,0 +1,29 @@
+// IE friendly rgba backgrounds
+// Usage: @include rgba-background(rgba(0,0,0,0.5), 0.5)
+//        @include rgba-background(#FFF, 0.2)
+// Notice opacity always has to be declared to the same as rgba alpha value
+$number-to-hex-hexes: 0 1 2 3 4 5 6 7 8 9 A B C D E F
+@function number-to-hex($number, $width: 2)
+    $s: nth($number-to-hex-hexes, ($number % 16) + 1)
+    @if $width > 1
+        @return number-to-hex(floor($number / 16), $width - 1) + '#{$s}'
+    @else
+        @return '#{$s}'
+
+@mixin rgba-background($color, $opacity: 1)
+    @if $opacity == 1
+        background: rgba($color, 1)
+    @else
+        $color: rgba($color, $opacity)
+        $a: number-to-hex(floor(opacity($color) * 255))
+        $r: number-to-hex(red($color))
+        $g: number-to-hex(green($color))
+        $b: number-to-hex(blue($color))
+        $argb: '#' + $a + $r + $g + $b
+        background: rgba($color, $opacity)
+        @if support-legacy-browser("ie", "8")
+            .lt-ie9 &
+                background: none
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})"
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})
+                zoom: 1
