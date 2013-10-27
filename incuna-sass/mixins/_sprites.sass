@@ -1,0 +1,26 @@
+$sprites-1x: sprite-map("1x/sprite-files/*.png", $layout: smart)
+$sprites-2x: sprite-map("2x/sprite-files/*.png", $spacing: 5px)
+
+%sprite-1x
+    background:
+        image: sprite-url($sprites-1x)
+        repeat: no-repeat
+
+%sprite-2x
+    @include media($hidpi)
+        background:
+            image: sprite-url($sprites-2x)
+            repeat: no-repeat
+
+@mixin sprite($name)
+    @extend %sprite-1x
+    @extend %sprite-2x
+    width: image-width(sprite-file($sprites-1x, $name))
+    height: image-height(sprite-file($sprites-1x, $name))
+    background:
+        position: sprite-position($sprites-1x, $name)
+    @include media($hidpi)
+        $position: sprite-position($sprites-2x, $name)
+        background:
+            position: ceil(nth($position, 1) / 2) ceil(nth($position, 2) / 2)
+        @include background-size(ceil(image-width(sprite-path($sprites-2x)) / 2) auto)
