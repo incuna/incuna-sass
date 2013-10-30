@@ -3,12 +3,12 @@
     $filepath: "../fonts/" + $family + "/" + $file
     @font-face
         font-family: "#{$style-name}"
-        @if $project != 'edetail'
-            src: url($filepath + ".eot")
-            src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg')
-        @else
+        @if $project == "edetail"
             // Provide only ttf for edetails
-            src: url($filepath + ".ttf")  format('truetype')
+            src: url($filepath + ".ttf")  format("truetype")
+        @else
+            src: url($filepath + ".eot")
+            src: url($filepath + ".eot?#iefix") format("embedded-opentype"), url($filepath + ".woff") format("woff"), url($filepath + ".ttf")  format("truetype"), url($filepath + ".svg#" + $style-name + "") format("svg")
 
     %#{$style-name}
         font:
