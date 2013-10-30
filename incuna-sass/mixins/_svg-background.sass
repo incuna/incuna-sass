@@ -1,0 +1,12 @@
+@mixin svg-background($svg, $inline: true, $width: '', $height: '', $dimensions: false)
+    .svg &
+        @if $inline == true
+            background: inline-image($svg)
+        @else
+            background: image-url($svg)
+        @include background-size($width $height)
+        @if $dimensions == true
+            @if $width != ''
+                width: $width
+            @if $height != ''
+                height: $height
