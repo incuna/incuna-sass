@@ -1,0 +1,252 @@
+// This is a stripped down version of the bootstrap styles
+// Not everything will be here, but the most useful parts are
+
+// The default output of a crispy form should match the bootstrap markup
+// You will only need to change the classes on the <form>
+// Three types of forms
+// Bootstrap provides simple markup and styles for two styles of common web forms.
+
+// Name                 Class                            Description
+// Vertical (default)   .form-vertical (not required)    Stacked, left-aligned labels over controls
+// Horizontal           .form-horizontal                 Float left, right-aligned labels on same line as controls
+
+$form-margin: 0 0 20px 0 !default
+
+$label-margin: 5px !default
+
+$field-width: 250px !default
+$field-height: 30px !default
+$field-padding: 4px !default
+$field-margin: 20px !default
+
+$horizontal-label-width: 140px !default
+$horizontal-label-margin: 20px !default
+
+$help-text-font-size: 80% !default
+
+form
+    @extend %clearfix
+    margin: $form-margin
+
+fieldset
+    @extend %clearfix
+    padding: 0
+    margin: 0
+    border: 0
+
+.control-group
+    @extend %clearfix
+    margin:
+        bottom: $field-margin
+
+.controls
+    @extend %clearfix
+
+// Groups of fields with labels on top (legends)
+legend
+    display: block
+    width: 100%
+    padding: 0
+    margin-bottom: $field-margin
+    line-height: $field-margin
+    border: 0
+    border-bottom: 1px solid
+
+// Identify controls by their labels
+label
+    display: block
+    margin:
+        bottom: $label-margin
+    &[for]
+        cursor: pointer
+
+// Inputs, Textareas, Selects
+input,
+textarea,
+select
+    @extend %border-box
+    @extend %inline-block
+    width: $field-width
+    height: $field-height
+    padding: $field-padding
+    border: 1px solid
+    &:focus
+        outline: 0
+    // Inputs within a label
+    label &
+        display: block
+
+// Mini reset for unique input types
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"]
+    width: auto
+    height: auto
+    padding: 0
+    margin: 3px 0
+    line-height: normal
+    cursor: pointer
+    @if support-legacy-browser("ie", "9")
+        .lt-ie10 &
+            border: 0
+    @if support-legacy-browser("ie", "7")
+        .lt-ie8 &
+            margin:
+                top: 0
+
+input[type="image"]
+    border: 0
+
+// Reset the file input to browser defaults
+input[type="file"]
+    width: auto
+    padding: initial
+    line-height: initial
+    border: initial
+    background-color: initial
+
+// Help out input buttons
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+    width: auto
+    height: auto
+
+// Set the height of select and file controls to match text inputs
+select,
+input[type="file"]
+    // In IE7, the height of the select element cannot be changed by height, only font-size
+    height: 28px
+    line-height: 28px
+    @if support-legacy-browser("ie", "7")
+        .lt-ie8 &
+            //  For IE7, add top margin to align select with labels
+            margin:
+                top: 4px
+
+// Reset line-height for IE
+input[type="file"]
+    @if support-legacy-browser("ie", "9")
+        .lt-ie10 &
+            line-height: 18px
+
+// Chrome on Linux and Mobile Safari need background-color
+select
+    width: $field-width
+    background-color: #fff
+    // Make multiple select elements height not fixed
+    &[multiple],
+    &[size]
+        height: auto
+
+// Only resize textareas vertically
+// Make textarea height behave
+textarea
+    resize: vertical
+    height: auto
+
+// Hidden inputs
+input[type="hidden"]
+    display: none
+
+// CHECKBOXES & RADIOS
+
+// Indent the labels to position radios/checkboxes as hanging
+.radio,
+.checkbox
+    padding-left: 18px
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"]
+    float: left
+    margin-left: -18px
+
+
+// Move the options list down to align with labels
+.controls
+    > .radio,
+    > .checkbox
+        &:first-child
+            // Has to be padding because margin collaspes
+            padding-top: $label-margin
+
+// Radios and checkboxes on same line
+.radio,
+.checkbox
+    &.inline
+        @extend %inline-block
+        padding-top: $label-margin
+        margin-bottom: 0
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline
+    // Space out consecutive inline controls
+    margin-left: $field-margin / 2
+
+// Disabled and read-only inputs
+input,
+select,
+textarea,
+    &[disabled],
+    &[readonly]
+        cursor: not-allowed
+
+// FORM FIELD FEEDBACK STATES
+$form-error: red
+.control-group
+    // Error
+    &.error
+        > label,
+        .help-block,
+        .help-inline
+            color: $form-error
+        input,
+        select,
+        textarea
+            color: $form-error
+            border-color: $form-error
+
+// FORM ACTIONS
+.form-actions
+    @extend %clearfix
+
+// HELP TEXT
+.help-block,
+.help-inline
+    font:
+        size: $help-text-font-size
+
+.help-block
+    // Account for any element using help-block
+    display: block
+    padding:
+        top: $field-margin / 2
+
+.help-inline
+    @extend %inline-block
+    padding:
+        left: $field-margin / 4
+
+// Horizontal-specific styles
+.form-horizontal
+    input,
+    textarea,
+    select,
+    .help-inline
+        @extend %inline-block
+        margin-bottom: 0
+
+    // Float the labels left
+    .control-label
+        float: left
+        width: $horizontal-label-width
+        padding-top: $label-margin
+        text-align: right
+
+    // Move over all input controls and content
+    .controls
+        margin-left: $horizontal-label-width + $horizontal-label-margin
+
+    // Move over buttons in .form-actions to align with .controls
+    .form-actions
+        padding-left: $horizontal-label-width + $horizontal-label-margin
