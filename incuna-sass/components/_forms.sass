@@ -14,6 +14,7 @@ $form-margin: 0 0 20px 0 !default
 
 $label-margin: 5px !default
 
+$field-font-size: $font-base !default
 $field-width: 250px !default
 $field-height: 30px !default
 $field-padding: 4px !default
@@ -61,14 +62,20 @@ label
         cursor: pointer
 
 // Inputs, Textareas, Selects
-input,
-textarea,
-select
+@mixin field-selectors
+    input,
+    textarea,
+    select
+        @content
+
+@include field-selectors
     @extend %border-box
     @extend %inline-block
     width: $field-width
     height: $field-height
     padding: $field-padding
+    font:
+        size: $field-font-size
     border: 1px solid
     &:focus
         outline: 0
@@ -137,12 +144,14 @@ select
     // Make multiple select elements height not fixed
     &[multiple],
     &[size]
+        min-height: $field-height * 4
         height: auto
 
 // Only resize textareas vertically
 // Make textarea height behave
 textarea
     resize: vertical
+    min-height: $field-height * 4
     height: auto
 
 // Hidden inputs
