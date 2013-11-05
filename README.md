@@ -5,7 +5,7 @@
 
 # Installation
 1. `bower install --save git@github.com:incuna/incuna-sass.git`
-2. Add the path to the installed package to your config.rb/Gruntfile.js e.g. `add_import_path = 'lib/incuna-sass'
+2. Add the path to the installed package to your config.rb/Gruntfile.js e.g. `add_import_path = 'lib/incuna-sass'`
 
 # Local checkout
 To use a local checkout as your installed version is very easy to do.
