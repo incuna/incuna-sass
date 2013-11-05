@@ -9,6 +9,7 @@
 
 # Local checkout
 To use a local checkout as your installed version is very easy to do.
+
 1. `git clone -p incuna/incuna-sass`
 1. `cd incuna-sass`
 1. `bower link`
