@@ -1,0 +1,13 @@
+// @extend %vertical-center on the parent of the target
+// @extend %inline-block and font-size on the target
+%vertical-center
+    font:
+        size: 0
+    $selector: "&:before"
+    @if support-legacy-browser("ie", "7")
+        $selector: "&:before, .before"
+        @extend %pseudo-before
+    #{$selector}
+        content: ''
+        @extend %inline-block
+        height: 100%

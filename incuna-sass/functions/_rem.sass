@@ -1,0 +1,10 @@
+// Output pixel font sizes in rems from $font-base
+// Recommended polyfill: https://github.com/chuckcarpenter/REM-unit-polyfill
+$use-rem: false !default
+@function rem($target, $context: $font-base)
+    @if $use-rem
+        @if $target == 0
+            @return 0
+        @return $target / $context + 0rem
+    @else
+        @return $target

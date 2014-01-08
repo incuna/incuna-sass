@@ -1,0 +1,14 @@
+// Use this helper when replacing text with an image in a block level element
+%image-replace
+    background:
+        color: transparent
+    border: 0
+    overflow: hidden
+    &:before
+        content: ''
+        display: block
+        width: 0
+        height: 100%
+    @if support-legacy-browser("ie", "7")
+        .lt-ie8 &
+            text-indent: -9999px
