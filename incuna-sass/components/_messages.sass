@@ -1,0 +1,63 @@
+$messages-padding: 15px !default
+$messages-margin: 20px !default
+
+.messages-wrapper
+    margin:
+        bottom: $messages-margin
+
+.alert
+    padding: $messages-padding
+    margin:
+        bottom: $messages-margin
+    border: 1px solid rgba(0, 0, 0, 0)
+    border-radius: 4px
+    &:last-child
+        margin:
+            bottom: 0
+    .close
+        position: relative
+        height: auto
+        padding: 0
+        margin: 0
+        border: 0
+        cursor: pointer
+        background: transparent
+        -webkit-appearance: none
+        color: #000
+        float: right
+        font:
+            size: 21px
+            weight: bold
+        line-height: 1
+        text:
+            align: left
+            shadow: 0 1px 0 #FFF
+        @include opacity(0.2)
+        @include border-radius(0)
+        @include box-shadow(none)
+        &:hover
+            color: #000
+            text-decoration: none
+            cursor: pointer
+            @include opacity(0.5)
+
+.alert-success
+    color: #3C763D
+    background-color: #DFF0D8
+    border-color: #D6E9C6
+
+.alert-info
+    color: #31708F
+    background-color: #D9EDF7
+    border-color: #BCE8F1
+
+.alert-warning
+    color: #8A6D3B
+    background-color: #FCF8E3
+    border-color: #FAEBCC
+
+.alert-danger
+    color: #A94442
+    background-color: #F2DEDE
+    border-color: #EBCCD1
+
