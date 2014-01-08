@@ -10,18 +10,18 @@
 // Vertical (default)   .form-vertical (not required)    Stacked, left-aligned labels over controls
 // Horizontal           .form-horizontal                 Float left, right-aligned labels on same line as controls
 
-$form-margin: 0 0 20px 0 !default
+$form-margin: 0 0 rem(20px) 0 !default
 
-$label-margin: 5px !default
+$label-margin: rem(5px) !default
 
 $field-font-size: $font-base !default
-$field-width: 250px !default
-$field-height: 30px !default
-$field-padding: 4px !default
-$field-margin: 20px !default
+$field-width: rem(250px) !default
+$field-height: rem(30px) !default
+$field-padding: rem(4px) !default
+$field-margin: rem(20px) !default
 
-$horizontal-label-width: 140px !default
-$horizontal-label-margin: 20px !default
+$horizontal-label-width: rem(140px) !default
+$horizontal-label-margin: rem(20px) !default
 
 $help-text-font-size: 80% !default
 
@@ -90,7 +90,7 @@ input[type="radio"]
     width: auto
     height: auto
     padding: 0
-    margin: 3px 0
+    margin: rem(3px) 0
     line-height: normal
     cursor: pointer
     @if support-legacy-browser("ie", "9")
@@ -123,19 +123,19 @@ input[type="submit"]
 select,
 input[type="file"]
     // In IE7, the height of the select element cannot be changed by height, only font-size
-    height: 28px
-    line-height: 28px
+    height: rem(28px)
+    line-height: rem(28px)
     @if support-legacy-browser("ie", "7")
         .lt-ie8 &
             //  For IE7, add top margin to align select with labels
             margin:
-                top: 4px
+                top: rem(4px)
 
 // Reset line-height for IE
 input[type="file"]
     @if support-legacy-browser("ie", "9")
         .lt-ie10 &
-            line-height: 18px
+            line-height: rem(18px)
 
 // Chrome on Linux and Mobile Safari need background-color
 select
@@ -163,12 +163,12 @@ input[type="hidden"]
 // Indent the labels to position radios/checkboxes as hanging
 .radio,
 .checkbox
-    padding-left: 18px
+    padding-left: rem(18px)
 
 .radio input[type="radio"],
 .checkbox input[type="checkbox"]
     float: left
-    margin-left: -18px
+    margin-left: rem(-18px)
 
 
 // Move the options list down to align with labels
