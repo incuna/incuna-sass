@@ -1,0 +1,10 @@
+{
+  "name": "incuna-sass",
+  "version": "1.0.0",
+  "homepage": "https://github.com/incuna/incuna-sass",
+  "authors": [
+    "Perry Roper <perryroper@gmail.com>"
+  ],
+  "description": "Incuna's Sass Library",
+  "license": "MIT"
+}
