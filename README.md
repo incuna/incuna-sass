@@ -4,7 +4,7 @@
 `compass >= 0.13.alpha.10`
 
 # Installation
-1. `bower install incuna-sass`
+1. `bower install incuna-sass --save`
 2. Add the path to the installed package to your config.rb/Gruntfile.js e.g. `add_import_path = 'lib/incuna-sass'`
 
 # Local checkout
