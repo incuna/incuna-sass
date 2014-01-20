@@ -1,3 +1,9 @@
+# 2.0.0
+
+* mixins/_font-face.sass now uses font-url() - please update your
+  compass config with the location of your font files with the `fonts_dir`
+  option.
+
 # 1.0.1
 
 * Update svg-background mixin to remove $rem argument. The $use-rem global
