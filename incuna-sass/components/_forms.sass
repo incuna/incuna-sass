@@ -237,7 +237,7 @@ $form-error: red !default
         left: $field-margin / 4
 
 // Horizontal-specific styles
-.form-horizontal
+%form-horizontal
     input,
     textarea,
     select,
@@ -259,3 +259,6 @@ $form-error: red !default
     // Move over buttons in .form-actions to align with .controls
     .form-actions
         padding-left: $horizontal-label-width + $horizontal-label-margin
+
+.form-horizontal
+    @extend %form-horizontal
