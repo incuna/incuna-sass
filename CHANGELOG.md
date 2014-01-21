@@ -1,3 +1,8 @@
+# 2.1.0
+
+* Added `%form-horizontal` extension to allow forms to have the styles without
+  necessarily having the `.form-horizontal` class.
+
 # 2.0.0
 
 * mixins/_font-face.sass now uses font-url() - please update your
