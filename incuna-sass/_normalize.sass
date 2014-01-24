@@ -27,6 +27,9 @@ template
 html
     -ms-text-size-adjust: 100% // 1
     -webkit-text-size-adjust: 100% // 1
+    // Remove horizontal jump when the scroll bar is visisble.
+    @if $project != 'edetail'
+        overflow-y: scroll
 
 // Links
 

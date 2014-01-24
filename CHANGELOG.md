@@ -1,3 +1,7 @@
+# 2.1.1
+
+* Added `html { overflow-y: scroll; }` to avoid horizontal page jumps.
+
 # 2.1.0
 
 * Added `%form-horizontal` extension to allow forms to have the styles without
