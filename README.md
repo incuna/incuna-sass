@@ -1,7 +1,7 @@
 # Requirements
 `sass >= 3.3.0.rc.1`
 
-`compass >= 0.13.alpha.10`
+`compass >= 1.0.0.alpha.17`
 
 # Installation
 1. `bower install incuna-sass --save`
