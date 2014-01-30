@@ -1,3 +1,8 @@
+# 2.1.2
+
+* Remove monkey patched function - now fixed in compass core.
+* Define 'web' $project with an ie version.
+
 # 2.1.1
 
 * Added `html { overflow-y: scroll; }` to avoid horizontal page jumps.
