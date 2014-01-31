@@ -18,3 +18,11 @@ To use a local checkout as your installed version is very easy to do.
 
 This creates a symlink to the your checkout allowing you to edit the bower
 installed version.
+
+# Releases
+To release a new version
+
+1. Increment the version in `bower.json`
+2. Edit `CHANGELOG.md` with changes since last release
+3. Tag the repository with the version number: e.g. `git tag 2.1.4`
+4. Remember to push the tags: `git push --tags`
