@@ -1,3 +1,8 @@
+# 2.1.3
+
+* Add placeholder class selector to placeholder helper for placeholder polyfill
+  scripts
+
 # 2.1.2
 
 * Remove monkey patched function - now fixed in compass core.
