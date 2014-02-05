@@ -1,3 +1,7 @@
+# 2.1.4
+
+* Added `cursor: pointer` to `%link` and `%link-reverse` helpers.
+
 # 2.1.3
 
 * Add placeholder class selector to placeholder helper for placeholder polyfill
