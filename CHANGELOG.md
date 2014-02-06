@@ -1,3 +1,10 @@
+# 2.1.5
+
+* Added a parameter to `@mixin sprite()` to optionally use a mixin rather than
+  an `@extend` to output background properties. This is to circumvent the
+  following sass limitation when including a sprite from within a media query:
+  "You may not @extend an outer selector from within @media."
+
 # 2.1.4
 
 * Added `cursor: pointer` to `%link` and `%link-reverse` helpers.
