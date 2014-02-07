@@ -1,3 +1,10 @@
+# 2.2.0
+
+* Added mixin to output all text inputs.
+* Reset iOS styling put on to text inputs. Please note that this may break
+  exisiting styling if you have a border radius on your fields. I didn't think
+  this warrented a full breaking change release.
+
 # 2.1.5
 
 * Added a parameter to `@mixin sprite()` to optionally use a mixin rather than
