@@ -68,6 +68,25 @@ label
     select
         @content
 
+@mixin text-inputs
+    input
+        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
+        &[type="color"],
+        &[type="date"],
+        &[type="datetime"],
+        &[type="datetime-local"],
+        &[type="email"],
+        &[type="month"],
+        &[type="number"],
+        &[type="password"],
+        &[type="search"],
+        &[type="tel"],
+        &[type="text"],
+        &[type="time"],
+        &[type="url"],
+        &[type="week"]
+            @content
+
 @include field-selectors
     @extend %border-box
     @extend %inline-block
@@ -82,6 +101,11 @@ label
     // Inputs within a label
     label &
         display: block
+
+@include text-inputs
+    // Reset iOS text inputs
+    -webkit-appearance: none
+    -webkit-border-radius: 0
 
 // Mini reset for unique input types
 input[type="image"],
