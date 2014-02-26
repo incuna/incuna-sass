@@ -1,12 +1,15 @@
-// normalize.css - http://git.io/normalize
-// v2.1.3
+// Based off of normalize.css - http://git.io/normalize
+// v3.0.0
 // License: MIT License
 
 // Correct `inline-block` display not defined in IE 8/9.
+// Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
 audio,
 canvas,
+progress,
 video
     display: inline-block
+    vertical-align: baseline
 
 // Prevent modern browsers from displaying `audio` without controls.
 // Remove excess height in iOS 5 devices.
@@ -140,6 +143,14 @@ input[type="reset"],
 input[type="submit"]
     -webkit-appearance: button // 2
     cursor: pointer // 3
+
+// Fix the cursor style for Chrome's increment/decrement buttons. For certain
+// `font-size` values of the `input`, it causes the cursor style of the
+// decrement button to change from `default` to `text`.
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+    height: auto
 
 // 1. Address box sizing set to `content-box` in IE 8/9/10.
 @if support-legacy-browser("ie", "8", "10")
