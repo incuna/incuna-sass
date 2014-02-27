@@ -1,0 +1,28 @@
+@include font-face("icomoon", "icomoon", "icomoon")
+
+%iconmoon-helper
+    @extend %icomoon
+    speak: none
+    font:
+        variant: normal
+    text:
+        transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+@each $icon in $icomoon-icons
+    %icon-#{nth($icon, 1)}
+        @extend %iconmoon-helper
+        content: '\e' + nth($icon, 2)
+    @if support-legacy-browser('ie', '7')
+        %icon-#{nth($icon, 1)}-ie
+            zoom: expression(this.runtimeStyle["zoom"] = "1", this.innerHTML = "&#xe#{nth($icon, 2)};")
+
+@mixin icon($icon, $pseudo)
+    &:#{$pseudo}
+        @extend %icon-#{$icon}
+    @if support-legacy-browser('ie', '7')
+        @extend %pseudo-#{$pseudo}
+        .#{$pseudo}
+            @extend %icon-#{$icon}-ie
