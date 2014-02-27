@@ -1,3 +1,8 @@
+// Incuna overrides
+@if not support-legacy-browser('ie', '7')
+    *
+        @extend %border-box
+
 // Based off of normalize.css - http://git.io/normalize
 // v3.0.0
 // License: MIT License
@@ -63,8 +68,9 @@ dfn
 
 // Address differences between Firefox and other browsers.
 hr
-    @extend %content-box
     height: 0
+    @if support-legacy-browser('ie', '7')
+        @extend %content-box
 
 // Address styling not present in IE 8/9.
 mark
@@ -158,18 +164,9 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button
     height: auto
 
-// 1. Address box sizing set to `content-box` in IE 8/9/10.
-@if support-legacy-browser("ie", "8", "10")
-    input[type="checkbox"],
-    input[type="radio"]
-        @extend %border-box // 1
-
 // 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-// 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
-//    (include `-moz` to future-proof).
 input[type="search"]
     -webkit-appearance: textfield // 1
-    @include box-sizing(content-box) // 2
 
 // Remove inner padding and search cancel button in Safari 5 and Chrome
 // on OS X.
