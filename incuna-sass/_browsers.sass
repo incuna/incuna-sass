@@ -1,6 +1,6 @@
 // Available $project types, define these in your project.
 // 'web'
-//      - 'epatient'
+//      - 'angulars'
 // 'edetail'
 
 // Patching the support-legacy-browser function with an unmerged commit in compass. See: https://github.com/chriseppstein/compass/pull/1524
@@ -27,4 +27,7 @@
     $browser-minimum-versions: ("chrome": "29", "ios-safari": "5.0-5.1", "safari": "7") !global
 
 @if $project == 'web'
-    $browser-minimum-versions: (ie: '7') !global
+    $browser-minimum-versions: ('ie': '7') !global
+
+@if $project == 'angular'
+    $browser-minimum-versions: ('ie': '8') !global
