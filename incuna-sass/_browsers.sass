@@ -1,14 +1,33 @@
 // Available $project types, define these in your project.
 // 'web'
-//      - 'epatient'
+//      - 'angulars'
 // 'edetail'
+
+// Patching the support-legacy-browser function with an unmerged commit in compass. See: https://github.com/chriseppstein/compass/pull/1524
+// Check whether the browser is supported according to the supported browsers,
+// declared minimum support and usage thresholds.
+@function support-legacy-browser($browser, $min-version, $max-version: null, $threshold: $critical-usage-threshold)
+    @if not index($supported-browsers, $browser)
+        @return false
+
+    // Check against declared minimums.
+    $min-required-version: map-get($browser-minimum-versions, $browser)
+    @if $min-required-version
+        @return compare-browser-versions($browser, $max-version or $min-version, $min-required-version) >= 0
+    @else
+        // Check against usage stats.
+        $usage: if($max-version, omitted-usage($browser, $min-version, $max-version), omitted-usage($browser, $min-version))
+        @return $usage > $threshold
 
 // eDetails are developed exclusively on OSX 10.9+
 // Webkit browsers are used in development and deployment is
 // currently iOS5+
 @if $project == 'edetail'
-    $supported-browsers: ("chrome", "ios-safari", "safari") !global
-    $browser-minimum-versions: ("chrome": "29", "ios-safari": "5.0-5.1", "safari": "7") !global
+    $supported-browsers: ('chrome', 'ios-safari', 'safari') !global
+    $browser-minimum-versions: ('chrome': '29', 'ios-safari': '5.0-5.1', 'safari': '7') !global
 
 @if $project == 'web'
-    $browser-minimum-versions: (ie: '7') !global
+    $browser-minimum-versions: ('ie': '7') !global
+
+@if $project == 'angular'
+    $browser-minimum-versions: ('ie': '8') !global

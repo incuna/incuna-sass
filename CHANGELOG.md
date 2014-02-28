@@ -1,3 +1,12 @@
+# 3.0.0
+
+* Added angular project type, with a minimum IE version of 8.
+* If the browser support is > IE7 then default to the border-box box model.
+* Add base styles for ePatient.
+* Add icomoon component.
+* Add base styles for ePatient modules.
+* Add bootstrap modal styles.
+
 # 2.2.0
 
 * Added mixin to output all text inputs.
