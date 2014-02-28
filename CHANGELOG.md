@@ -5,6 +5,7 @@
 * Add base styles for ePatient.
 * Add icomoon component.
 * Add base styles for ePatient modules.
+* Add bootstrap modal styles.
 
 # 2.2.0
 
