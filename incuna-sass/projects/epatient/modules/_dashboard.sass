@@ -1,0 +1,24 @@
+.widget
+    $widget-index: 10 !default
+    $widget-dragging-index: $widget-index + 1 !default
+    width: 33%
+    padding: 0 1%
+    z-index: $widget-index
+    &.is-dragging
+        z-index: $widget-dragging-index
+    .header
+        padding: $site-padding
+        border: 1px solid
+        .title
+            margin: 0
+
+    .section
+        border: 1px solid
+        margin:
+            bottom: $site-padding
+
+    .body
+        padding: $site-padding
+
+    .footer
+        padding: $site-padding
