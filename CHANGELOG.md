@@ -1,3 +1,7 @@
+# 3.1.0
+
+* Add `%link-blank` helper
+
 # 3.0.0
 
 * Added angular project type, with a minimum IE version of 8.
