@@ -1,0 +1,29 @@
+// Horizontal navigation bar
+// This sets some basic styling for an inline horizontal navigation bar
+// for level0 (the main nav items)
+// This uses the nav-height and nav-item-border variables which should be set in edetail library
+%horz-bar
+    #level0
+        padding: 0
+        margin: 0
+        list-style: none
+        height: $nav-height
+        background: #000
+        li
+            display: inline-block
+            // Set height and line-height to be the same
+            // to vertically center nav items.
+            // (this only works if they are single line)
+            height: $nav-height
+            line-height: $nav-height
+            // This design has the lis at the same width for
+            // consistency - some designs may call for padding
+            // set instead of width
+            width: 180px
+            text-align: center
+            color: #fff
+            border:
+                left: $nav-item-border
+            &:last-child
+                border:
+                    right: $nav-item-border
