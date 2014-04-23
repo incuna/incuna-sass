@@ -114,18 +114,13 @@ input[type="radio"]
     height: auto
     padding: 0
     margin: rem(3px) 0
+    border: 0
     line-height: normal
     cursor: pointer
-    @if support-legacy-browser("ie", "9")
-        .lt-ie10 &
-            border: 0
     @if support-legacy-browser("ie", "7")
         .lt-ie8 &
             margin:
                 top: 0
-
-input[type="image"]
-    border: 0
 
 // Reset the file input to browser defaults
 input[type="file"]

@@ -1,6 +1,10 @@
+# 3.1.1
+
+* Removed borders on `input[type="checkbox"]` and `input[type="radio"]`.
+
 # 3.1.0
 
-* Add `%link-blank` helper
+* Add `%link-blank` helper.
 
 # 3.0.0
 
