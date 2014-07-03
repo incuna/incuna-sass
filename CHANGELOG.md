@@ -1,3 +1,6 @@
+# 3.1.2
+* Add `<main>` element to HTML5 `display: block;` shim in the reset.
+
 # 3.1.1
 
 * Removed borders on `input[type="checkbox"]` and `input[type="radio"]`.
