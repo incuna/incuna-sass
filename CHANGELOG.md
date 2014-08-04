@@ -1,3 +1,6 @@
+# 3.2.0
+* Added `button` and various `input` button mixins
+
 # 3.1.2
 * Add `<main>` element to HTML5 `display: block;` shim in the reset.
 
