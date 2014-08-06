@@ -70,11 +70,10 @@ label
 
 @mixin button-inputs
     button,
-    input
-        &[type="submit"], 
-        &[type="reset"], 
-        &[type="button"]
-            @content
+    input[type="submit"], 
+    input[type="reset"], 
+    input[type="button"]
+	@content
 
 @mixin text-inputs
     input
