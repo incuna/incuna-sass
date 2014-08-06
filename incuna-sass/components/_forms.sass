@@ -68,6 +68,13 @@ label
     select
         @content
 
+@mixin button-inputs
+    button,
+    input[type="submit"], 
+    input[type="reset"], 
+    input[type="button"]
+	@content
+
 @mixin text-inputs
     input
         // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
