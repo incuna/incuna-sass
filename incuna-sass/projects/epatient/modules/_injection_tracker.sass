@@ -1,9 +1,9 @@
 .injection-list-wrapper
-    $person-item-height: rem(100px) !default
-    $person-item-width: rem(97px) !default
-    $person-empty-height: image-height('1x/#{$person-empty}')
-    $person-empty-width: image-width('1x/#{$person-empty}')
-    $person-border-width: rem(1px)  !default
+    $person-item-height: 100px !default
+    $person-item-width: 100px !default
+    $person-empty-height: $person-item-height
+    $person-empty-width: $person-item-width
+    $person-border-width: 1px !default
     $person-border-color: #7a7979 !default
     $person-edit-border: #ed1c24 !default
     $person-overlay: $person-border-width
@@ -117,19 +117,12 @@
             &.future form
                 opacity: 0.3
 
-        .day-title
-            font-size: rem(36px)
-
     .injection-edit
         $injection-edit-padding: $site-padding
-        background-color: #fff
         position: relative
         // Use border-top for the gap above the edit box, because margin-top
         // will have to go all the way up to a non-floated element.
         clear: both
         border-top: 1px solid transparent
-        .title
-            font-size: rem(14px)
-            text-transform: uppercase
         .day-title
             display: none
