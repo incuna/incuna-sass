@@ -1,0 +1,120 @@
+.injection-list-wrapper
+    $person-item-height: 100px !default
+    $person-item-width: 100px !default
+    $person-empty-height: $person-item-height
+    $person-empty-width: $person-item-width
+    $person-border-width: 1px !default
+    $person-border-color: #7a7979 !default
+    $person-edit-border: #ed1c24 !default
+    $person-overlay: $person-border-width
+    $num-items: 7
+    width: rem(($person-item-width - $person-overlay) * $num-items + $person-border-width)
+
+    .date-select
+        @extend %clearfix
+        $date-change-height: rem(40px)
+        $date-change-width: rem(40px)
+        $date-select-width: rem(320px)
+        $date-title-width: $date-select-width - ($date-change-width * 2)
+        width: $date-select-width
+        margin: 0 auto
+
+        .date-display,
+        .date-change
+            display: block
+            float: left
+
+        .date-display
+            height: $date-change-height
+            line-height: $date-change-height
+            text-align: center
+            width: $date-title-width
+
+        .date-change
+            background:
+                position: center
+            height: $date-change-height
+            width: $date-change-width
+
+    .clear-injection-location
+        bottom: 0
+        left: 0
+
+    .list-titles
+        @extend %clearfix
+        .day-title
+            float: left
+            padding: rem(25px) 0
+            width: $person-item-width - $person-overlay
+
+    .injection-location
+        background-color: transparent
+        padding-top: 0
+        .day-title
+            margin-bottom: $site-padding / 2
+
+    .injection-list-wrapper
+        margin-bottom: $site-padding
+        @extend %clearfix
+
+    .injection-list
+        float: left
+
+        .injection-list-item
+            float: left
+
+            // Style injection item.
+            form
+                height: $person-item-height
+                width: $person-item-width
+                padding: rem(5px)
+                border: $person-border-width solid $person-border-color
+                margin: 0
+                    right: -$person-border-width
+                    top: -$person-border-width
+
+            // Reduce the size of the injection image.
+            .injections-location-wrapper
+                height: $person-empty-height
+                width: $person-empty-width
+                margin: auto
+            .injections-location-wrapper,
+            .injection-location-highlight
+                background-position: center
+            form
+                &.not-empty .injections-location-wrapper
+                    width: 100%
+
+        // Style borders for states and positions of injection items.
+        .injection-list
+            // Week list positions.
+            &.last form
+                margin-bottom: 0
+        .injection-list-item
+            // Day positions.
+            &.last form
+                margin-right: 0
+            // Injection item state.
+            &.edit form
+                position: relative
+                &:after
+                    content: ''
+                    border: 3px dotted $person-edit-border
+                    display: block
+                    position: absolute
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    left: 0
+            &.future form
+                @include opacity(0.3)
+
+    .injection-edit
+        $injection-edit-padding: $site-padding
+        position: relative
+        // Use border-top for the gap above the edit box, because margin-top
+        // will have to go all the way up to a non-floated element.
+        clear: both
+        border-top: 1px solid transparent
+        .day-title
+            display: none

@@ -1,3 +1,7 @@
+# 3.3.0
+* Added structure styles for epatient injection tracker list details page.
+* Added hidpi-image mixin to media mixins
+
 # 3.2.0
 * Added `button` and various `input` button mixins
 

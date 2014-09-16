@@ -6,3 +6,16 @@
 $hidpi: "print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)"
 // Print
 $print: "print"
+
+@mixin hidpi-image($image, $use-dimensions: true)
+    $image-1x: '1x/#{$image}'
+    $image-2x: '2x/#{$image}'
+    $height: image-height($image-1x)
+    $width: image-width($image-1x)
+    background-image: image-url($image-1x)
+    @if $use-dimensions
+        @include background-size($width $height)
+        height: $height
+        width: $width
+    @include media($hidpi)
+        background-image: image-url($image-2x)
