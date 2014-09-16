@@ -8,7 +8,7 @@
     $person-edit-border: #ed1c24 !default
     $person-overlay: $person-border-width
     $num-items: 7
-    width: ($person-item-width - $person-overlay) * $num-items + $person-border-width
+    width: rem(($person-item-width - $person-overlay) * $num-items + $person-border-width)
 
     .date-select
         @extend %clearfix
@@ -17,7 +17,7 @@
         $date-select-width: rem(320px)
         $date-title-width: $date-select-width - ($date-change-width * 2)
         width: $date-select-width
-        margin: rem(10px) auto
+        margin: 0 auto
 
         .date-display,
         .date-change
@@ -25,28 +25,20 @@
             float: left
 
         .date-display
-            font-size: rem(24px)
             height: $date-change-height
             line-height: $date-change-height
             text-align: center
             width: $date-title-width
 
         .date-change
-            @extend %image-replace
             background:
                 position: center
-                repeat: no-repeat
             height: $date-change-height
             width: $date-change-width
 
     .clear-injection-location
         bottom: 0
         left: 0
-
-    .day-title
-        font-size: rem(30px)
-        line-height: 1
-        text-align: center
 
     .list-titles
         @extend %clearfix
@@ -115,7 +107,7 @@
                     bottom: 0
                     left: 0
             &.future form
-                opacity: 0.3
+                @include opacity(0.3)
 
     .injection-edit
         $injection-edit-padding: $site-padding
