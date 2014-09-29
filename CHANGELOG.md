@@ -1,3 +1,10 @@
+# 3.3.1
+
+* Renamed the injections sass file to be consistent with ePatient module
+  naming.
+* Removed more non-structural styling from injections sass.
+* Added `cursor: default` to all `disabled` elements.
+
 # 3.3.0
 * Added structure styles for epatient injection tracker list details page.
 * Added hidpi-image mixin to media mixins
