@@ -1,3 +1,7 @@
+# 3.4.0
+
+* Add overflow scroll helper.
+
 # 3.3.1
 
 * Renamed the injections sass file to be consistent with ePatient module
