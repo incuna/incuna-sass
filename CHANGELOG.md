@@ -1,6 +1,7 @@
 # 3.4.0
 
-* Add overflow scroll helper.
+* Added overflow scroll helper.
+* Added base bootstrap datepicker styles.
 
 # 3.3.1
 
