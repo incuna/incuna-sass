@@ -287,3 +287,33 @@ $form-error: red !default
 
 .form-horizontal
     @extend %form-horizontal
+
+// Applied to form-fields where we want to hide the label from the directive.
+%label-hidden
+    .control-label
+        display: none
+.label-hidden
+    @extend %label-hidden
+
+// Applied to form-fields where we want to hide the help from the directive.
+%help-hidden
+    .help
+        display: none
+.help-hidden
+    @extend %help-hidden
+
+// Hide the asterisk and use the placeholder to display it.
+%asterisk-hidden
+    .asterisk
+        display: none
+.asterisk-hidden
+    @extend %asterisk-hidden
+
+%hide-field
+    // Hide the field and remove it from the DOM flow. Make sure it's still
+    // accessible, so don't use display:none.
+    @extend %visually-hidden
+
+%hide-fields
+    @include field-selectors
+        @extend %hide-field
