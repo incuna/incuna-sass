@@ -1,0 +1,106 @@
+.datepicker
+    $datepicker-button-size: rem(32px)
+    overflow: hidden
+
+    td
+        width: $datepicker-button-size
+
+    button
+        border: 0
+        padding: 0
+        margin: 0
+        outline: 0
+        text:
+            align: center
+        display: block
+        width: $datepicker-button-size
+        height: $datepicker-button-size
+
+    &,
+    table
+        table-layout: fixed
+        width: 100%
+
+    .table-head
+        .title-row
+            th
+                cursor: pointer
+                text-align: center
+                height: $datepicker-button-size
+                vertical-align: middle
+                &.title
+                    width: 100%
+                    button
+                        width: 100%
+                &.prev,
+                &.next
+                    width: $datepicker-button-size
+                &.prev
+                    button
+                        border:
+                            right: 1px solid
+                &.next
+                    button
+                        border:
+                            left: 1px solid
+
+    .inner-table-wrapper
+        padding: $site-padding / 4
+
+    .table-body
+        td,
+        th
+            text-align: center
+            vertical-align: middle
+        td
+            border: 1px solid
+        button
+            width: 100%
+            background: rgba(#000, 0.4)
+
+            // Days in previous and next months have this class
+            &.text-muted
+                background: rgba(#000, 0.2)
+
+            &.today
+                background: rgba(#000, 0.6)
+                color: #fff
+
+            &.selected
+                color: red
+                background: rgba(yellow, 0.4)
+
+            &[disabled]
+                &,
+                &.text-muted
+                    background: rgba(#000, 0.1)
+                    cursor: default
+                    color: rgba(#000, 0.4)
+
+            &.highlighted
+                $datepicker-highlight-size: rem(8px)
+                position: relative
+                &:after
+                    content: ''
+                    background: red
+                    height: $datepicker-highlight-size
+                    width: $datepicker-highlight-size
+                    position: absolute
+                    top: rem(3px)
+                    right: rem(3px)
+
+.datepicker-popup
+    background: #fff
+    border: 1px solid
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 1000
+    display: none
+    margin: 0
+        top: rem(5px)
+    min-width: rem(160px)
+    list-style: none
+
+    .datepicker
+        width: rem(290px)
