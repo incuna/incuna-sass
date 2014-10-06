@@ -1,7 +1,7 @@
 .widget
     $widget-index: 10 !default
     $widget-dragging-index: $widget-index + 1 !default
-    width: 33%
+    width: (100% / 3)
     padding: 0 1%
     z-index: $widget-index
     &.is-dragging
@@ -19,6 +19,8 @@
 
     .body
         padding: $site-padding
+        overflow: hidden
 
     .footer
         padding: $site-padding
+        overflow: hidden
