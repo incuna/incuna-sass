@@ -1,6 +1,7 @@
 # 3.4.0
 
 * Add overflow scroll helper.
+* Added visually hidden helper.
 
 # 3.3.1
 
