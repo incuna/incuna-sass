@@ -2,6 +2,7 @@
 
 * Added overflow scroll helper.
 * Added base bootstrap datepicker styles.
+* Added visually hidden helper.
 
 # 3.3.1
 
