@@ -1,0 +1,92 @@
+.reminders-widget
+
+    .reminder-empty
+        // Ensure a gap between the empty text and the footer.
+        display: block
+        padding:
+            bottom: $site-padding
+
+    .reminder-list
+        // Allow the list to scroll.
+        @extend %overflow-scroll
+        // Restrict height to force a scroll.
+        max-height: rem(440px)
+        margin-top: $site-padding
+
+    .reminder-title
+        margin-bottom: 0
+
+    .reminder-group
+        border-bottom: 1px solid
+
+        .item-two-col
+            .first
+                width: 80%
+            .last
+                width: 20%
+                text-align: right
+
+        // Compact version when not editing.
+        .not-editing
+            @extend %label-hidden
+            @extend %asterisk-hidden
+            // Hide some fields.
+            @each $field in date interval offset actions
+                .field-#{$field}
+                    @extend %hide-field
+            .field-name
+                float: left
+                .edit-trigger
+                    @extend %link-reverse
+            .field-time
+                float: right
+
+    .new-reminder
+        position: relative
+        margin-top: rem(10px)
+
+        .show-reminder-button,
+        .form-actions
+            text-align: center
+
+    .hide-reminder-button
+        // Make a close button with a large hit area.
+        display: block
+        position: absolute
+        top: rem(10px)
+        right: 0
+
+.reminder-item,
+.reminder-add
+    @extend %help-hidden
+
+    form
+        margin: 0
+
+        // Position labels inline.
+        .control-label,
+        .controls,
+        .timepicker
+            @extend %inline-block
+
+        .control-label
+            margin-right: rem(4px)
+
+        select
+            width: auto
+
+        .field-time
+            .timepicker
+                td
+                    padding:
+                        right: rem(5px)
+
+        .field-offset
+            select
+                width: rem(190px)
+
+        .field-actions
+            margin: 0
+
+.reminder-item
+    position: relative

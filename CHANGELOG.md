@@ -4,6 +4,7 @@
 * Added base bootstrap datepicker styles.
 * Added visually hidden helper.
 * Added form helpers for hiding various form components.
+* Added base epatient reminder styles.
 
 # 3.3.1
 
