@@ -1,3 +1,7 @@
+# 3.5.0
+
+* Added base flowplayer styles.
+
 # 3.4.0
 
 * Added overflow scroll helper.
