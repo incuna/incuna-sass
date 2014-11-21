@@ -1,3 +1,10 @@
+# 3.5.1
+
+* Flowplayer styles improved to work better with aspect ratios different
+  from the default.
+* Added 4:3 aspect ratio styles.
+* Added base play button styles.
+
 # 3.5.0
 
 * Added base flowplayer styles.

@@ -1,19 +1,42 @@
-$flowplayer-width: 720px !default
-$flowplayer-aspect-ratio: 16 / 9 !default
+$video-width: 720px !default
+$video-aspect-ratio-wide: 9 / 16 !default
+$video-aspect-ratio-four-three: 3 / 4 !default
 
-[flowplayer]
-    margin:
-        bottom: $site-padding * 2
-    video,
-    object,
-    .poster img
-        display: block
-    video,
-    object,
-    a
-        max-width: $flowplayer-width
-        max-height: $flowplayer-width / $flowplayer-aspect-ratio
-        width: 100%
-        height: 100%
-    .poster
+.video-wrapper
+    max-width: $video-width
+    .video-inner
+        padding:
+            bottom: $video-aspect-ratio-wide * 100%
+    &.aspect-four-three
+        .video-inner
+            padding:
+                bottom: $video-aspect-ratio-four-three * 100%
+    .video-inner
         position: relative
+        margin:
+            bottom: $site-padding * 2
+        video,
+        object,
+        .poster a,
+        .poster img
+            display: block
+        video,
+        object,
+        .poster
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+        .play-button
+            pointer-events: none
+            position: absolute
+            top: 50%
+            left: 50%
+            margin:
+                top: -50px
+                left: -25px
+            width: 0
+            height: 0
+            border: 50px solid transparent
+                left-color: rgba(#000, 0.3)
