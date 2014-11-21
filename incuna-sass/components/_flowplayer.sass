@@ -1,19 +1,24 @@
-$flowplayer-width: 720px !default
-$flowplayer-aspect-ratio: 16 / 9 !default
+$video-width: 720px !default
+$video-aspect-ratio: 9 / 16 !default
 
-[flowplayer]
-    margin:
-        bottom: $site-padding * 2
-    video,
-    object,
-    .poster img
-        display: block
-    video,
-    object,
-    a
-        max-width: $flowplayer-width
-        max-height: $flowplayer-width / $flowplayer-aspect-ratio
-        width: 100%
-        height: 100%
-    .poster
+.video-wrapper
+    max-width: $video-width
+    .video-inner
         position: relative
+        padding:
+            bottom: $video-aspect-ratio * 100%
+        margin:
+            bottom: $site-padding * 2
+        video,
+        object,
+        .poster a,
+        .poster img
+            display: block
+        video,
+        object,
+        .poster
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
