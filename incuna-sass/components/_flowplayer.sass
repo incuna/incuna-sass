@@ -1,12 +1,18 @@
 $video-width: 720px !default
-$video-aspect-ratio: 9 / 16 !default
+$video-aspect-ratio-wide: 9 / 16 !default
+$video-aspect-ratio-four-three: 3 / 4 !default
 
 .video-wrapper
     max-width: $video-width
     .video-inner
-        position: relative
         padding:
-            bottom: $video-aspect-ratio * 100%
+            bottom: $video-aspect-ratio-wide * 100%
+    &.aspect-four-three
+        .video-inner
+            padding:
+                bottom: $video-aspect-ratio-four-three * 100%
+    .video-inner
+        position: relative
         margin:
             bottom: $site-padding * 2
         video,
