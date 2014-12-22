@@ -1,3 +1,7 @@
+# 3.5.2
+
+* The bootstrap `.timepicker` table shouldn't be set to `display: inline-block`
+
 # 3.5.1
 
 * Flowplayer styles improved to work better with aspect ratios different
