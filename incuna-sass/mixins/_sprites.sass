@@ -32,5 +32,5 @@ $sprites-2x: sprite-map("2x/sprite-files/*.png", $spacing: 5px)
     @include media($hidpi)
         $position: sprite-position($sprites-2x, $name)
         background:
-            position: ceil(nth($position, 1) / 2) ceil(nth($position, 2) / 2)
-        @include background-size(ceil(image-width(sprite-path($sprites-2x)) / 2) auto)
+            position: round(nth($position, 1) / 2) round(nth($position, 2) / 2)
+        @include background-size(round(image-width(sprite-path($sprites-2x)) / 2) auto)
