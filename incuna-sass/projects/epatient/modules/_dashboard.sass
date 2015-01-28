@@ -4,13 +4,26 @@
     width: (100% / 3)
     padding: 0 1%
     z-index: $widget-index
-    &.is-dragging
+    &.as-sortable-placeholder
+        margin: 0
+    // Override masonry styles
+    .as-sortable-drag &
+        top: auto !important
+        left: auto !important
+        width: 100% !important
         z-index: $widget-dragging-index
     .header
+        position: relative
         padding: $site-padding
         border: 1px solid
         .title
             margin: 0
+        .as-sortable-item-handle
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
 
     .section
         border: 1px solid
