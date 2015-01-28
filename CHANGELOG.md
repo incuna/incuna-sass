@@ -1,3 +1,7 @@
+# 4.0.0
+
+* Updated dashboard styles for ePatient 7.x.x
+
 # 3.5.2
 
 * The bootstrap `.timepicker` table shouldn't be set to `display: inline-block`
