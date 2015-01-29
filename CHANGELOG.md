@@ -1,3 +1,7 @@
+# 4.0.1
+
+* Make 1x and 2x sprite maps consistent, both using 2px spacing.
+
 # 4.0.0
 
 * Updated dashboard styles for ePatient 7.x.x
