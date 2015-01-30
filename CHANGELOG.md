@@ -1,3 +1,7 @@
+# 4.0.2
+
+* Improve HiDPI media query. Removes dpi units which cause error spam in Chrome's console.
+
 # 4.0.1
 
 * Make 1x and 2x sprite maps consistent, both using 2px spacing.
