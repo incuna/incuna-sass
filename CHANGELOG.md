@@ -1,3 +1,7 @@
+# 4.0.3
+
+* Fixed a bug where a message alerting that the sprite files were unchanged more than once.
+
 # 4.0.2
 
 * Improve HiDPI media query. Removes dpi units which cause error spam in Chrome's console.
