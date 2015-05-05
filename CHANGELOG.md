@@ -1,3 +1,7 @@
+# 4.0.4
+
+* Fixed a bug to enable usage of rem(1px) which will now return 1px
+
 # 4.0.3
 
 * Fixed a bug where a message alerting that the sprite files were unchanged more than once.
