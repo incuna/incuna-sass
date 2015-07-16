@@ -1,4 +1,4 @@
-# Upcoming
+# 4.0.5
 
 * Added an `_angular.sass` component with `cursor: pointer` for `[ng-click]`s
 
