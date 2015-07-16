@@ -1,3 +1,7 @@
+# Upcoming
+
+* Added an `_angular.sass` component with `cursor: pointer` for `[ng-click]`s
+
 # 4.0.4
 
 * Fixed a bug to enable usage of rem(1px) which will now return 1px
