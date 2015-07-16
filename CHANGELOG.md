@@ -1,3 +1,7 @@
+# 4.0.6
+
+* Revert rem(1px) bug fix from 4.0.4 due to breaking change
+
 # 4.0.5
 
 * Added an `_angular.sass` component with `cursor: pointer` for `[ng-click]`s
