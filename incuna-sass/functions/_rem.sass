@@ -5,8 +5,6 @@ $use-rem: false !default
     @if $use-rem
         @if $target == 0
             @return 0
-        @if $target == 1px
-            @return 1px
         @return $target / $context + 0rem
     @else
         @return $target
