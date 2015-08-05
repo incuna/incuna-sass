@@ -1,0 +1,12 @@
+//////////  S V G  M I X I N  //////////////////////////////
+// To use like you would a sprite with the added benefit that
+// it can be whatever size you like and will work perfectly
+// on retina screens
+@mixin svg($file, $width: 100%, $height: $width)
+    @include background(image-url('svg/#{$file}.svg'))
+    background:
+        repeat: no-repeat
+        size: contain
+    width: $width
+    height: $height
+    display: inline-block

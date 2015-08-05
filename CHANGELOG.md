@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add svg mixin to use instead of sprites
+
 # 4.0.6
 
 * Revert rem(1px) bug fix from 4.0.4 due to breaking change
