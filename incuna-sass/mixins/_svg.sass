@@ -6,8 +6,7 @@
 // Element mixin to be used for general background images
 // as you would use a retina mixin
 @mixin svg-element($file, $width: 100%, $height: $width)
-    @include background(image-url('svg/#{$file}.svg'))
-    background:
+    background: image-url('svg/#{$file}.svg')
         repeat: no-repeat
         size: contain
     width: $width
@@ -16,5 +15,5 @@
 // Icon mixin sets display property
 // more appropriate for use on pseudo elements etc.
 @mixin svg-icon($file, $width: 100%, $height: $width)
-    @mixin svg-element($file, $width: 100%, $height: $width)
+    @mixin svg-element($file, $width, $height)
     display: inline-block

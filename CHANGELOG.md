@@ -1,6 +1,6 @@
 # Upcoming
 
-* Add svg mixin to use instead of sprites
+* Add svg mixins to use instead of sprites / retina mixin
 
 # 4.0.6
 
