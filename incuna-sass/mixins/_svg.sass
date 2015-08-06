@@ -1,12 +1,20 @@
-//////////  S V G  M I X I N  //////////////////////////////
+//////////  S V G   M I X I N  //////////////////////////////
 // To use like you would a sprite with the added benefit that
 // it can be whatever size you like and will work perfectly
 // on retina screens
-@mixin svg($file, $width: 100%, $height: $width)
+
+// Element mixin to be used for general background images
+// as you would use a retina mixin
+@mixin svg-element($file, $width: 100%, $height: $width)
     @include background(image-url('svg/#{$file}.svg'))
     background:
         repeat: no-repeat
         size: contain
     width: $width
     height: $height
+
+// Icon mixin sets display property
+// more appropriate for use on pseudo elements etc.
+@mixin svg-icon($file, $width: 100%, $height: $width)
+    @mixin svg-element($file, $width: 100%, $height: $width)
     display: inline-block
