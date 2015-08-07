@@ -9,12 +9,6 @@
 // a vector source file you can make an svg and use that instead
 // of making a 1x and 2x version. You will have a nice crisp 
 // image on both retina and non-retina screens
-@mixin svg-element($file, $width: 100%, $height: $width)
-    background: image-url('svg/#{$file}.svg')
-        repeat: no-repeat
-        size: contain
-    width: $width
-    height: $height
 
 // svg-element examples:
 
@@ -25,39 +19,46 @@
 // 2. To set a background image on a 20px square element that 
 //    is not getting height / width from a parent container:
 // .container-element
-//     @include svg-element([file-name], 20px)
+//     @include svg-element(my-svg, 20px)
 
 // 3. To set a background image on an element with specifically
 //    defined height and width, ie. 20px by 40px
 //    (using contain means the entire image will be scaled to fit within 
 //    the available space without being stretched)
 // .container-element
-//     @include svg-element([file-name], 20px, 40px)
+//     @include svg-element(my-svg, 20px, 40px)
+
+@mixin svg-element($file, $width: 100%, $height: $width)
+    background: image-url('svg/#{$file}.svg')
+        repeat: no-repeat
+        size: contain
+    width: $width
+    height: $height
 
 
 //////////  S V G - I C O N  ////////////////////////////////
-// Icon mixin sets display property and is
-// more appropriate for use on pseudo elements /
-// spans / containers that are not block element
-@mixin svg-icon($file, $width: 100%, $height: $width)
-    @mixin svg-element($file, $width, $height)
-    display: inline-block
+
+// Icon mixin's purpose is for creating icons
+// it sets display property and so is more appropriate 
+// for use on pseudo elements / spans / containers that are 
+// not block element
+// Sets display: inline-block to be more flexible than block
+// elements and so it will display next to other inline elements
 
 // svg-icon examples:
 
-// 1. To create a pseudo-element icon that will sit next to some text:
+// 1. To create a pseudo-element icon that will sit next to some
+//    text in an inline or inline-block element:
 //    (where $icon-size = the dimensions of the icon)
 // .container-element
-//     display: inline-block
 //     &::after
-//         @include svg-icon([file-name], $icon-size)
+//         @include svg-icon(my-svg, $icon-size)
 //         content: ''
 
 // 2. This can be adjusted so that it resizes using media queries
 // .container-element
-//     display: inline-block
 //     &::after
-//         @include svg-icon([file-name], $icon-size)
+//         @include svg-icon(my-svg, $icon-size)
 //         content: ''
 //         @include media($bigger-screen)
 //             width: $icon-size * 2
@@ -65,3 +66,7 @@
 //         @include media($even-bigger-screen)
 //             width: $icon-size * 3
 //             height: $icon-size * 4
+
+@mixin svg-icon($file, $width: 100%, $height: $width)
+    @mixin svg-element($file, $width, $height)
+    display: inline-block
