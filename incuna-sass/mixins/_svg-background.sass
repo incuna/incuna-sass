@@ -1,4 +1,5 @@
 @mixin svg-background($svg, $inline: false, $width: '', $height: '', $dimensions: false)
+    @warn "svg-background mixin is deprecated and will be removed in next major release, use svg-element or svg-icon instead"
     .svg &
         @if $inline == true
             background: inline-image($svg)
