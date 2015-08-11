@@ -1,6 +1,7 @@
 # Upcoming
 
-* Define font-base variable used by functions with a default value that can be overwritten locally
+* Define variables used by incuna-sass to avoid unnecessary compiling errors
+* Use !default to ensure variables can be easily overwritten locally and will not take precedence over local files
 
 # 4.1.1
 
