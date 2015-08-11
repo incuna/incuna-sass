@@ -1,3 +1,7 @@
+# Upcoming
+
+* Define font-base variable used by functions with a default value that can be overwritten locally
+
 # 4.1.0
 
 * Add svg mixins to use instead of sprites / retina mixin
