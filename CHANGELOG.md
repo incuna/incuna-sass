@@ -1,4 +1,4 @@
-# Upcoming
+# 4.1.0
 
 * Add svg mixin to mixins.sass imports file, also add sprites mixin with a comment warning about potential compiling erros
 
