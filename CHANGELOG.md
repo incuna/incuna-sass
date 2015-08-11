@@ -1,3 +1,8 @@
+# Upcoming
+
+* Add svg mixin to mixins.sass imports file
+* Add commented sprites mixin to mixins.sass so it doesn't cause compiling errors
+
 # 4.2.0
 
 * Define variables used by incuna-sass to avoid unnecessary compiling errors
