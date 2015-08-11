@@ -1,8 +1,9 @@
+# Upcoming
+
+* Add svg mixin to mixins.sass imports file
+* Add sprites mixin to mixins.sass with a comment warning about potential compiling errors
+
 # 4.1.0
-
-* Add svg mixin to mixins.sass imports file, also add sprites mixin with a comment warning about potential compiling erros
-
-# 4.0.7
 
 * Add svg mixins to use instead of sprites / retina mixin
 
