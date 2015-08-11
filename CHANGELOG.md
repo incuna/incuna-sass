@@ -1,4 +1,4 @@
-# Upcoming
+# 4.2.0
 
 * Define variables used by incuna-sass to avoid unnecessary compiling errors
 * Use !default to ensure variables can be easily overwritten locally and will not take precedence over local files
