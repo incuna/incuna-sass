@@ -1,7 +1,16 @@
 # Upcoming
 
 * Add svg mixin to mixins.sass imports file
-* Add sprites mixin to mixins.sass with a comment warning about potential compiling errors
+* Add commented sprites mixin to mixins.sass so it doesn't cause compiling errors
+
+# 4.2.0
+
+* Define variables used by incuna-sass to avoid unnecessary compiling errors
+* Use !default to ensure variables can be easily overwritten locally and will not take precedence over local files
+
+# 4.1.1
+
+* BUGFIX: replace @mixin with @include where intention was to use a mixin, not define one
 
 # 4.1.0
 
