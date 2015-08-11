@@ -1,3 +1,7 @@
+# Upcoming
+
+* Fix svg mixin to resolve errors - use @include not @mixin in second mixin
+
 # 4.1.0
 
 * Add svg mixins to use instead of sprites / retina mixin
