@@ -1,6 +1,6 @@
 # Upcoming
 
-* Fix svg mixin to resolve errors - use @include not @mixin in second mixin
+* BUGFIX: replace @mixin with @include where intention was to use a mixin, not define one
 
 # 4.1.0
 
