@@ -1,3 +1,8 @@
+# Upcoming
+
+* Define variables used by incuna-sass to avoid unnecessary compiling errors
+* Use !default to ensure variables can be easily overwritten locally and will not take precedence over local files
+
 # 4.1.1
 
 * BUGFIX: replace @mixin with @include where intention was to use a mixin, not define one
