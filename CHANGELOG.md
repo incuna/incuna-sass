@@ -1,3 +1,7 @@
+# Upcoming
+
+* Remove projects folder from incuna-sass
+
 # 4.2.1
 
 * Add svg mixin to mixins.sass imports file
