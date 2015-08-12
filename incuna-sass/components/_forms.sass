@@ -95,7 +95,7 @@ label
             @content
 
 @include field-selectors
-    @extend %inline-block
+    display: inline-block
     width: $field-width
     height: $field-height
     padding: $field-padding
@@ -208,7 +208,7 @@ input[type="hidden"]
 .radio,
 .checkbox
     &.inline
-        @extend %inline-block
+        display: inline-block
         padding-top: $label-margin
         margin-bottom: 0
 
@@ -257,7 +257,7 @@ $form-error: red !default
         top: $field-margin / 2
 
 .help-inline
-    @extend %inline-block
+    display: inline-block
     padding:
         left: $field-margin / 4
 
@@ -267,7 +267,7 @@ $form-error: red !default
     textarea,
     select,
     .help-inline
-        @extend %inline-block
+        display: inline-block
         margin-bottom: 0
 
     // Float the labels left
