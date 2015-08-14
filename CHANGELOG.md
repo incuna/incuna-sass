@@ -1,4 +1,4 @@
-# Upcoming
+# 4.2.2
 
 * Amend font-face mixin to fix css output of unquoted font family keywords
 
