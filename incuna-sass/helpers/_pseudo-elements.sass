@@ -1,13 +1,10 @@
 // Documentation https://gist.github.com/3339249
 %pseudo-before
-    @if support-legacy-browser("ie", "7")
-        .lt-ie8 &
-            zoom: expression(this.runtimeStyle.zoom='1', this.insertBefore(document.createElement('span'), this.firstChild).className='before')
+    .lt-ie8 &
+        zoom: expression(this.runtimeStyle.zoom='1', this.insertBefore(document.createElement('span'), this.firstChild).className='before')
 %pseudo-after
-    @if support-legacy-browser("ie", "7")
-        .lt-ie8 &
-            zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('span')).className='after')
+    .lt-ie8 &
+        zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('span')).className='after')
 %pseudo-both
-    @if support-legacy-browser("ie", "7")
-        .lt-ie8 &
-            zoom: expression(this.runtimeStyle.zoom='1', this.insertBefore(document.createElement('span'), this.firstChild).className='before', this.appendChild(document.createElement('span')).className='after')
+    .lt-ie8 &
+        zoom: expression(this.runtimeStyle.zoom='1', this.insertBefore(document.createElement('span'), this.firstChild).className='before', this.appendChild(document.createElement('span')).className='after')

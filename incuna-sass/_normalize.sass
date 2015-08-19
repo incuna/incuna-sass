@@ -1,5 +1,5 @@
 // Incuna overrides
-@if not support-legacy-browser('ie', '7')
+.lt-ie8 &
     *
         @extend %border-box
 
@@ -44,7 +44,7 @@ html
 // Links
 
 // Remove the gray background color from active links in IE 10.
-@if support-legacy-browser("ie", "10")
+.lt-ie11 &
     a
         background: transparent
 
@@ -71,7 +71,7 @@ dfn
 // Address differences between Firefox and other browsers.
 hr
     height: 0
-    @if support-legacy-browser('ie', '7')
+    .lt-ie8 &
         @extend %content-box
 
 // Address styling not present in IE 8/9.
@@ -120,14 +120,14 @@ sub
 // Embedded content
 
 // Correct overflow displayed oddly in IE 9.
-@if support-legacy-browser("ie", "9")
+.lt-ie10 &
     svg:not(:root)
         overflow: hidden
 
 img
     max-width: 100%
     height: auto
-    @if support-legacy-browser("ie", "7")
+    .lt-ie8 &
         -ms-interpolation-mode: bicubic
 
 // Forms
@@ -181,11 +181,10 @@ input[type="search"]::-webkit-search-decoration
     -webkit-appearance: none
 
 // Remove inner padding and border in Firefox 4+.
-@if support-legacy-browser("firefox", "4")
-    button::-moz-focus-inner,
-    input::-moz-focus-inner
-        border: 0
-        padding: 0
+button::-moz-focus-inner,
+input::-moz-focus-inner
+    border: 0
+    padding: 0
 
 // 1. Remove default vertical scrollbar in IE 8/9.
 // 2. Improve readability and alignment in all browsers.

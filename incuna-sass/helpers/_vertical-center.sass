@@ -4,7 +4,7 @@
     font:
         size: 0
     $selector: "&:before"
-    @if support-legacy-browser("ie", "7")
+    .lt-ie8 &
         $selector: "&:before, .before"
         @extend %pseudo-before
     #{$selector}

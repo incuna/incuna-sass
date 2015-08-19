@@ -15,14 +15,14 @@
     %icon-#{nth($icon, 1)}
         @extend %iconmoon-helper
         content: '\e' + nth($icon, 2)
-    @if support-legacy-browser('ie', '7')
+    .lt-ie8 &
         %icon-#{nth($icon, 1)}-ie
             zoom: expression(this.runtimeStyle["zoom"] = "1", this.innerHTML = "&#xe#{nth($icon, 2)};")
 
 @mixin icon($icon, $pseudo)
     &:#{$pseudo}
         @extend %icon-#{$icon}
-    @if support-legacy-browser('ie', '7')
+    .lt-ie8 &
         @extend %pseudo-#{$pseudo}
         .#{$pseudo}
             @extend %icon-#{$icon}-ie
