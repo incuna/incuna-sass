@@ -1,3 +1,9 @@
+# Upcoming
+
+* Move files that are duplicated by bourbon / are for legacy browser support to legacy folder
+* Create legacy import file so that legacy files can be added to projects separately
+* Prefix all mixins / helpers in legacy files with `legacy-`
+
 # 5.0.0
 
 * Remove compass reliant code from incuna-sass
