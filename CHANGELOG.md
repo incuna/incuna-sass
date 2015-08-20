@@ -1,3 +1,7 @@
+# Upcoming
+
+* Remove projects folder from incuna-sass
+
 # 4.2.2
 
 * Amend font-face mixin to fix css output of unquoted font family keywords
