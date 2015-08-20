@@ -95,7 +95,8 @@ label
             @content
 
 @include field-selectors
-    @extend %inline-block
+    display: inline-block
+    vertical-align: middle
     width: $field-width
     height: $field-height
     padding: $field-padding
@@ -124,10 +125,9 @@ input[type="radio"]
     border: 0
     line-height: normal
     cursor: pointer
-    @if support-legacy-browser("ie", "7")
-        .lt-ie8 &
-            margin:
-                top: 0
+    .lt-ie8 &
+        margin:
+            top: 0
 
 // Reset the file input to browser defaults
 input[type="file"]
@@ -150,17 +150,15 @@ input[type="file"]
     // In IE7, the height of the select element cannot be changed by height, only font-size
     height: rem(28px)
     line-height: rem(28px)
-    @if support-legacy-browser("ie", "7")
-        .lt-ie8 &
-            //  For IE7, add top margin to align select with labels
-            margin:
-                top: rem(4px)
+    .lt-ie8 &
+        //  For IE7, add top margin to align select with labels
+        margin:
+            top: rem(4px)
 
 // Reset line-height for IE
 input[type="file"]
-    @if support-legacy-browser("ie", "9")
-        .lt-ie10 &
-            line-height: rem(18px)
+    .lt-ie10 &
+        line-height: rem(18px)
 
 // Chrome on Linux and Mobile Safari need background-color
 select
@@ -208,7 +206,8 @@ input[type="hidden"]
 .radio,
 .checkbox
     &.inline
-        @extend %inline-block
+        display: inline-block
+        vertical-align: middle
         padding-top: $label-margin
         margin-bottom: 0
 
@@ -257,7 +256,8 @@ $form-error: red !default
         top: $field-margin / 2
 
 .help-inline
-    @extend %inline-block
+    display: inline-block
+    vertical-align: middle
     padding:
         left: $field-margin / 4
 
@@ -267,7 +267,8 @@ $form-error: red !default
     textarea,
     select,
     .help-inline
-        @extend %inline-block
+        display: inline-block
+        vertical-align: middle
         margin-bottom: 0
 
     // Float the labels left

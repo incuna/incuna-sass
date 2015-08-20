@@ -1,3 +1,8 @@
+# Upcoming
+
+* Remove compass reliant code from incuna-sass
+* Update normalize.sass with newer version from github.com/necolas/normalize.css
+
 # 4.3.0
 
 * Remove projects folder from incuna-sass

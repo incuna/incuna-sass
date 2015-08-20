@@ -21,9 +21,8 @@ $number-to-hex-hexes: 0 1 2 3 4 5 6 7 8 9 A B C D E F
         $b: number-to-hex(blue($color))
         $argb: '#' + $a + $r + $g + $b
         background: rgba($color, $opacity)
-        @if support-legacy-browser("ie", "8")
-            .lt-ie9 &
-                background: none
-                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})"
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})
-                zoom: 1
+        .lt-ie9 &
+            background: none
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})"
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})
+            zoom: 1
