@@ -3,6 +3,14 @@
 * Remove compass reliant code from incuna-sass
 * Update normalize.sass with newer version from github.com/necolas/normalize.css
 
+# 4.3.0
+
+* Remove projects folder from incuna-sass
+
+# 4.2.2
+
+* Amend font-face mixin to fix css output of unquoted font family keywords
+
 # 4.2.1
 
 * Add svg mixin to mixins.sass imports file

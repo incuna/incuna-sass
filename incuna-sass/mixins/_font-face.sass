@@ -1,6 +1,12 @@
 // More info: https://github.com/perry/sass-font-face
+// Examples
+// @include font-face('myfont', 'myfont-webfont', 'myfont', sans-serif)
+// @include font-face('myfont', 'myfont-webfont', 'myfont', 'sans-serif')
 @mixin font-face($style-name, $file, $family, $category:"")
     $filepath: $family + "/" + $file
+    // This ensures that font keywords (e.g. sans-serif) 
+    //  are always outputted unquoted
+    $unquoted-category: #{$category}
     @font-face
         font-family: "#{$style-name}"
         @if $project == "edetail"
@@ -13,7 +19,7 @@
     %#{$style-name}
         font:
             @if $category != ""
-                family: "#{$style-name}", #{$category}
+                family: "#{$style-name}", $unquoted-category
             @else
                 family: "#{$style-name}"
             style: normal
