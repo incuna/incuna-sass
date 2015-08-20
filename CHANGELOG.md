@@ -1,4 +1,4 @@
-# Upcoming
+# 5.0.0
 
 * Remove compass reliant code from incuna-sass
 * Update normalize.sass with newer version from github.com/necolas/normalize.css
