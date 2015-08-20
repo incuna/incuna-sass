@@ -1,4 +1,4 @@
-# Upcoming
+# 4.3.0
 
 * Remove projects folder from incuna-sass
 
