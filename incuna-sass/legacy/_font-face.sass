@@ -2,7 +2,7 @@
 // Examples
 // @include font-face('myfont', 'myfont-webfont', 'myfont', sans-serif)
 // @include font-face('myfont', 'myfont-webfont', 'myfont', 'sans-serif')
-@mixin font-face($style-name, $file, $family, $category:"")
+@mixin legacy-font-face($style-name, $file, $family, $category:"")
     $filepath: $family + "/" + $file
     // This ensures that font keywords (e.g. sans-serif) 
     //  are always outputted unquoted

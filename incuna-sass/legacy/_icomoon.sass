@@ -1,6 +1,6 @@
 @include font-face("icomoon", "icomoon", "icomoon")
 
-%iconmoon-helper
+%legacy-iconmoon-helper
     @extend %icomoon
     speak: none
     font:
@@ -13,13 +13,13 @@
 
 @each $icon in $icomoon-icons
     %icon-#{nth($icon, 1)}
-        @extend %iconmoon-helper
+        @extend %legacy-iconmoon-helper
         content: '\e' + nth($icon, 2)
     .lt-ie8 &
         %icon-#{nth($icon, 1)}-ie
             zoom: expression(this.runtimeStyle["zoom"] = "1", this.innerHTML = "&#xe#{nth($icon, 2)};")
 
-@mixin icon($icon, $pseudo)
+@mixin legacy-icon($icon, $pseudo)
     &:#{$pseudo}
         @extend %icon-#{$icon}
     .lt-ie8 &
