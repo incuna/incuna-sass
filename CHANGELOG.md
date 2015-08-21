@@ -1,4 +1,4 @@
-# Upcoming
+# 5.1.0
 
 * Move files that are duplicated by bourbon / are for legacy browser support to legacy folder
 * Create legacy import file so that legacy files can be added to projects separately
