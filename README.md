@@ -31,6 +31,7 @@ To release a new version
 Incuna-sass is getting a bit of an overhaul.
 
 Incuna-sass 5.0.0 removes compass dependent code from the Incuna-sass library. This means the following files have been removed and will not be supported:
+
 1. `browsers.sass`
 2. `inline-block.sass`
 3. `placeholders.sass`
@@ -38,6 +39,7 @@ Incuna-sass 5.0.0 removes compass dependent code from the Incuna-sass library. T
 5. `svg-background.sass` - This was replaced by two new svg mixins in `svg.sass`
 
 To replace some of the Compass mixins and helpers are now using [Bourbon](http://bourbon.io/). This library includes mixins and helpers for things that are included in Incuna-sass so we have moved those files, and any others that are only needed to support legacy browsers into a `legacy` folder that can be added to projects separately when needed. All of these mixins and helpers have been renamed so that they are now prefaced with `legacy-` to avoid overwriting / conflicts with Bourbon code
+
 1. `box-sizing.sass`
 2. `clearfix.sass`
 3. `font-face.sass`
