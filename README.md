@@ -30,7 +30,7 @@ To release a new version
 # Incuna-sass Version 5
 Incuna-sass is getting a bit of an overhaul.
 
-Incuna-sass 5.0.0 removes compass dependent code from the Incuna-sass library. This means the following files have been remove and will not be supported:
+Incuna-sass 5.0.0 removes compass dependent code from the Incuna-sass library. This means the following files have been removed and will not be supported:
 1. `browsers.sass`
 2. `inline-block.sass`
 3. `placeholders.sass`
