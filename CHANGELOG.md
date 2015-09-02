@@ -1,4 +1,4 @@
-# Upcoming
+# 5.1.1
 
 * Make datepicker.sass easier to overwrite by unnesting styles
 
