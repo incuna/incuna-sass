@@ -1,3 +1,7 @@
+# Upcoming
+
+* Make datepicker.sass easier to overwrite by unnesting styles
+
 # 5.1.0
 
 * Move files that are duplicated by bourbon / are for legacy browser support to legacy folder
