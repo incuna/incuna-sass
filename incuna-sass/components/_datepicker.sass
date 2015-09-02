@@ -1,5 +1,5 @@
 .datepicker
-    $datepicker-button-size: rem(32px)
+    $datepicker-button-size: rem(32px) !default
     overflow: hidden
 
     td
@@ -21,28 +21,27 @@
         table-layout: fixed
         width: 100%
 
-    .table-head
-        .title-row
-            th
-                cursor: pointer
-                text-align: center
-                height: $datepicker-button-size
-                vertical-align: middle
-                &.title
-                    width: 100%
-                    button
-                        width: 100%
-                &.prev,
-                &.next
-                    width: $datepicker-button-size
-                &.prev
-                    button
-                        border:
-                            right: 1px solid
-                &.next
-                    button
-                        border:
-                            left: 1px solid
+    .title-row
+        th
+            cursor: pointer
+            text-align: center
+            height: $datepicker-button-size
+            vertical-align: middle
+    .title
+        width: 100%
+        button
+            width: 100%
+    .prev,
+    .next
+        width: $datepicker-button-size
+    .prev
+        button
+            border:
+                right: 1px solid
+    .next
+        button
+            border:
+                left: 1px solid
 
     .table-body
         td,
@@ -55,18 +54,6 @@
             width: 100%
             background: rgba(#000, 0.4)
 
-            // Days in previous and next months have this class
-            &.text-muted
-                background: rgba(#000, 0.2)
-
-            &.today
-                background: rgba(#000, 0.6)
-                color: #fff
-
-            &.selected
-                color: red
-                background: rgba(yellow, 0.4)
-
             &[disabled]
                 &,
                 &.text-muted
@@ -74,17 +61,29 @@
                     cursor: default
                     color: rgba(#000, 0.4)
 
-            &.highlighted
-                $datepicker-highlight-size: rem(8px)
-                position: relative
-                &:after
-                    content: ''
-                    background: red
-                    height: $datepicker-highlight-size
-                    width: $datepicker-highlight-size
-                    position: absolute
-                    top: rem(3px)
-                    right: rem(3px)
+    // Days in previous and next months have this class
+    .text-muted
+        background: rgba(#000, 0.2)
+
+    .today
+        background: rgba(#000, 0.6)
+        color: #fff
+
+    .selected
+        color: red
+        background: rgba(yellow, 0.4)
+
+    .highlighted
+        $datepicker-highlight-size: rem(8px)
+        position: relative
+        &:after
+            content: ''
+            background: red
+            height: $datepicker-highlight-size
+            width: $datepicker-highlight-size
+            position: absolute
+            top: rem(3px)
+            right: rem(3px)
 
 .datepicker-popup
     background: #fff
