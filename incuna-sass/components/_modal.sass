@@ -12,9 +12,9 @@ $modal-index: $modal-backdrop-index + 1 !default
     z-index: $modal-backdrop-index
     background-color: #000
     &.fade
-        @include opacity(0)
+        opacity: 0
     &.in
-        @include opacity(0.5)
+        opacity: 0.5
 
 .modal
     position: fixed
@@ -32,9 +32,9 @@ $modal-index: $modal-backdrop-index + 1 !default
         @include transition-property(transform)
         @include transition-duration(.3s)
         @include transition-timing-function(ease-out)
-        @include translate(0, -25%)
+        @include transform(translate(0, -25%))
     &.in .modal-dialog
-        @include translate(0, 0)
+        @include transform(translate(0, 0))
     .modal-dialog
         position: relative
         width: auto
@@ -51,7 +51,7 @@ $modal-index: $modal-backdrop-index + 1 !default
             border: 1px solid rgba(#000, 0.2)
             border-radius: rem(6px)
             outline: none
-            @include box-shadow(0 rem(3px) rem(9px) rgba(#000, 0.5))
+            box-shadow: 0 rem(3px) rem(9px) rgba(#000, 0.5)
             padding: $site-padding
             @media (min-width: 768px)
-                @include box-shadow(0 rem(5px) rem(15px) rgba(#000, 0.5))
+                box-shadow: 0 rem(5px) rem(15px) rgba(#000, 0.5)
