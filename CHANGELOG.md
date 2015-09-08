@@ -1,3 +1,7 @@
+# Upcoming
+
+* Unnest modal styles, remove media queries to make them easier to overwrite
+
 # 5.1.2
 
 * Remove leftover compass mixins from modal.sass

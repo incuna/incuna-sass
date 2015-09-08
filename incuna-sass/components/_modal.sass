@@ -35,23 +35,19 @@ $modal-index: $modal-backdrop-index + 1 !default
         @include transform(translate(0, -25%))
     &.in .modal-dialog
         @include transform(translate(0, 0))
-    .modal-dialog
-        position: relative
-        width: auto
-        margin: rem(10px)
-        @media (min-width: 768px)
-            width: rem(600px)
-            margin: rem(30px) auto
-        .modal-content
-            position: relative
-            background:
-                color: #fff
-                clip: padding-box
-            border: 1px solid #999
-            border: 1px solid rgba(#000, 0.2)
-            border-radius: rem(6px)
-            outline: none
-            box-shadow: 0 rem(3px) rem(9px) rgba(#000, 0.5)
-            padding: $site-padding
-            @media (min-width: 768px)
-                box-shadow: 0 rem(5px) rem(15px) rgba(#000, 0.5)
+.modal-dialog
+    position: relative
+    width: auto
+    max-width: rem(600px)
+    margin: rem(30px) auto
+.modal-content
+    position: relative
+    background:
+        color: #fff
+        clip: padding-box
+    border: 1px solid #999
+    border: 1px solid rgba(#000, 0.2)
+    border-radius: rem(6px)
+    outline: none
+    padding: $site-padding
+    box-shadow: 0 rem(5px) rem(15px) rgba(#000, 0.5)
