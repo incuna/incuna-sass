@@ -1,4 +1,4 @@
-# Upcoming
+# 5.1.2
 
 * Remove leftover compass mixins from modal.sass
 
