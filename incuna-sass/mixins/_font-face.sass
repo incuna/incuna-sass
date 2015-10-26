@@ -3,33 +3,31 @@
 // Like this:
 //      @function font-url($path)
 //          @return url('../path/to/fonts/' + $path)
-@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
-    $filepath: $family + '/' + $file
-    @font-face
-        font-family: '#{$style-name}'
 
-        // Default src without IE-8 and woff2 support
-        src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+// Use the font-face mixin to add web fonts to your projects
+// introduce the arguments in the following manner:
+// @include font-face("font-name", "font-file-name", "folder-name", "font-category")
+// where 
+// font-name = the name you want to use for the font in your project
+// font-file-name = the name of the font file in your project files
+// folder-name = the name of the parent folder containing your font file - usually named 
+//     to match font family name
+// font-category = serif, sans-serif, cursive, etc.
 
-        // Support for woff2 files is optional 
-        // (this format still has quite limited support)
-        @if $woff2
-            src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+// You can use the two optional arguments to add .woff2 and/or .eot formats to your mixin
+// .woff2 is an updated version of .woff and has limited support at the moment
+// .eot is an IE specific format that adds support for IE8 and below
 
-        // Support for IE8 and lower requires .eot format
-        @if $IE-8
-            src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+// Fonts of different weights / styles should be added separately
 
-        // If both IE-8 and woff2 is required
-        @if $IE-8 and $woff2
-            src: font-url($filepath + '.eot'), font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+// for example if you'd like your project to use Roboto across 
+// all browsers:
+//     @include font-face("roboto-regular", "Roboto-Regular", "roboto", "sans-serif")
+//     @include font-face("roboto-medium", "Roboto-Medium", "roboto", "sans-serif")
+//     @include font-face("roboto-bold-italic", "Roboto-Bold-Italic", "roboto", "sans-serif")
 
-// Use this mixin to set fonts in your project
-@mixin font($style-name, $category: sans-serif)
-    font:
-        family: '#{$style-name}', $category
-        style: normal
-        weight: normal
+// You can then use the font mixin to apply these fonts to your elements:
+//     @include font(roboto-regular)
 
 // I recommend setting font names as variables in your projects locally
 // to make it easier to set fonts, eg:
@@ -57,3 +55,31 @@
 // $font-formal-serif: formal-serif-font-name
 // .formal-element
 //     @include font($font-formal-serif, serif)
+
+@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
+    $filepath: $family + '/' + $file
+    @font-face
+        font-family: '#{$style-name}'
+
+        // Default src without IE-8 and woff2 support
+        src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // Support for woff2 files is optional 
+        // (this format still has quite limited support)
+        @if $woff2
+            src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // Support for IE8 and lower requires .eot format
+        @if $IE-8
+            src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // If both IE-8 and woff2 is required
+        @if $IE-8 and $woff2
+            src: font-url($filepath + '.eot'), font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+// Use this mixin to set fonts in your project
+@mixin font($style-name, $category: sans-serif)
+    font:
+        family: '#{$style-name}', $category
+        style: normal
+        weight: normal
