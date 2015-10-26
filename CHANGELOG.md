@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add new font face mixin
+
 # 5.1.3
 
 * Unnest modal styles, remove media queries to make them easier to overwrite

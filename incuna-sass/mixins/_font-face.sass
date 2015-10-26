@@ -1,0 +1,59 @@
+// New font face mixin with more flexibility and more comprehensive browser support
+// Requires that you set the font file path for the project locally
+// Like this:
+//      @function font-url($path)
+//          @return url('../path/to/fonts/' + $path)
+@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
+    $filepath: $family + '/' + $file
+    @font-face
+        font-family: '#{$style-name}'
+
+        // Default src without IE-8 and woff2 support
+        src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // Support for woff2 files is optional 
+        // (this format still has quite limited support)
+        @if $woff2
+            src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // Support for IE8 and lower requires .eot format
+        @if $IE-8
+            src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+        // If both IE-8 and woff2 is required
+        @if $IE-8 and $woff2
+            src: font-url($filepath + '.eot'), font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+
+// Use this mixin to set fonts in your project
+@mixin font($style-name, $category: sans-serif)
+    font:
+        family: '#{$style-name}', $category
+        style: normal
+        weight: normal
+
+// I recommend setting font names as variables in your projects locally
+// to make it easier to set fonts, eg:
+
+// $font-main: font-name
+// .main
+//     @include font($font-main)
+
+// for different font-weights and styles:
+
+// $font-bold: font-name-bold
+// $font-medium-italic: font-name-medium-italic
+// .main
+//     h2
+//         @include font($font-bold)
+//     em
+//         @include font($font-medium-italic)
+
+// or for an accent font:
+
+// $font-fancy-script: fancy-script-font-name
+// .fancy-element
+//     @include font($font-fancy-script, cursive)
+
+// $font-formal-serif: formal-serif-font-name
+// .formal-element
+//     @include font($font-formal-serif, serif)
