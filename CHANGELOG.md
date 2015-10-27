@@ -1,3 +1,8 @@
+# 5.1.4
+
+* Make helpers mixins to make them easier to overwrite, keep optional extends that extend the mixins
+* Move vertical-center helper to legacy folder
+
 # 5.1.3
 
 * Unnest modal styles, remove media queries to make them easier to overwrite
