@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add new font face mixin
+
 # 5.1.4
 
 * Make helpers mixins to make them easier to overwrite, keep optional extends that extend the mixins
