@@ -1,3 +1,8 @@
-%overflow-scroll
+// Set an element to scroll content that does not
+// fit within it's dimensions
+@mixin overflow-scroll
     overflow: auto
     -webkit-overflow-scrolling: touch
+
+%overflow-scroll
+    @include overflow-scroll
