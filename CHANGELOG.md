@@ -1,4 +1,4 @@
-# Upcoming
+# 5.2.0
 
 * Add new font face mixin
 
