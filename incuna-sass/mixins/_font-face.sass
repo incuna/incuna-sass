@@ -56,7 +56,7 @@
 // .formal-element
 //     @include font($font-formal-serif, serif)
 
-@mixin font-face-alt($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
+@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
     $filepath: $family + '/' + $file
     @font-face
         font-family: '#{$style-name}'
