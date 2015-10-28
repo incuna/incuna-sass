@@ -56,26 +56,25 @@
 // .formal-element
 //     @include font($font-formal-serif, serif)
 
-@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
+@mixin font-face-alt($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
     $filepath: $family + '/' + $file
     @font-face
         font-family: '#{$style-name}'
-
-        // Default src without IE-8 and woff2 support
-        src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
-
-        // Support for woff2 files is optional 
-        // (this format still has quite limited support)
-        @if $woff2
-            src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
-
-        // Support for IE8 and lower requires .eot format
-        @if $IE-8
-            src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
-
-        // If both IE-8 and woff2 is required
+        // If / else statements must be nested so only one src property is output by the css
+        // If both IE-8 and woff2 are required output this:
         @if $IE-8 and $woff2
             src: font-url($filepath + '.eot'), font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+        @else
+            // Support for just IE8 and lower is required output this:
+            @if $IE-8 and ($woff2 = false)
+                src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+            @else
+                // If support for just woff2 is required output this:
+                @if $woff2 and ($IE-8 = false)
+                    src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
+                // If neither IE8 or woff2 support is required output this:
+                @else
+                    src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
 
 // Use this mixin to set fonts in your project
 @mixin font($style-name, $category: sans-serif)

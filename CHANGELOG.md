@@ -1,3 +1,7 @@
+# Upcoming
+
+* BUGFIX: amend new font-face mixin so that only one src property can be output by the css
+
 # 5.2.0
 
 * Add new font face mixin
