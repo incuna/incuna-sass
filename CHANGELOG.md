@@ -1,4 +1,4 @@
-# Upcoming
+# 5.2.1
 
 * BUGFIX: amend new font-face mixin so that only one src property can be output by the css
 
