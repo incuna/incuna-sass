@@ -1,3 +1,7 @@
+# Upcoming
+
+* BUGFIX: fix link and font-face mixins again, but properly this time (use == not =)
+
 # 5.2.2
 
 * BUGFIX: fix link mixin @if statements so only one is used
