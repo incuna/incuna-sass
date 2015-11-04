@@ -1,18 +1,19 @@
 // Mixin to quickly add / remove default styles to links
 @mixin link($type: default)
     cursor: pointer
-    @if $type = default
-        text-decoration: underline
-        &:hover
-            text-decoration: none
     @if $type = reverse
         text-decoration: none
         &:hover
             text-decoration: underline
-    @if $type = blank
-        text-decoration: none
-        &:hover
+    @else
+        @if $type = blank
             text-decoration: none
+            &:hover
+                text-decoration: none
+        @else
+            text-decoration: underline
+            &:hover
+                text-decoration: none
 
 %link
     @include link
