@@ -5,15 +5,14 @@
         text-decoration: none
         &:hover
             text-decoration: underline
-    @else
-        @if $type = blank
+    @else if $type = blank
             text-decoration: none
             &:hover
                 text-decoration: none
-        @else
-            text-decoration: underline
-            &:hover
-                text-decoration: none
+    @else
+        text-decoration: underline
+        &:hover
+            text-decoration: none
 
 %link
     @include link
