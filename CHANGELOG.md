@@ -1,6 +1,7 @@
 # Upcoming
 
 * BUGFIX: fix link mixin @if statements so only one is used
+* Tidy up font-face mixin if/else statments - denest
 
 # 5.2.1
 
