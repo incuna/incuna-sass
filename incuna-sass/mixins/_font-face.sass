@@ -65,10 +65,10 @@
         @if $IE-8 and $woff2
             src: font-url($filepath + '.eot'), font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
         // Support for just IE8 and lower is required output this:
-        @else if $IE-8 and ($woff2 = false)
+        @else if $IE-8 and ($woff2 == false)
             src: font-url($filepath + '.eot'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
         // If support for just woff2 is required output this:
-        @else if $woff2 and ($IE-8 = false)
+        @else if $woff2 and ($IE-8 == false)
             src: font-url($filepath + '.woff2') format('woff2'), font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
         // If neither IE8 or woff2 support is required output this:
         @else
