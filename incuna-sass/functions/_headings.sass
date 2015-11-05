@@ -1,9 +1,4 @@
-// sass function to loop through H tags
-@function headings($from:1, $to:6)
-    @if $from == $to
-        @return 'h#{$from}'
-    @else
-        @return 'h#{$from},' + headings($from+1, $to)
+// Sass function to loop through H tags
 
 // Call it passing 2 numeric arguments. For example,
 //    #{headings(1,4)}
@@ -11,3 +6,9 @@
 // would output:
 //    h1, h2, h3, h4
 //      color: red
+
+@function headings($from:1, $to:6)
+    @if $from == $to
+        @return 'h#{$from}'
+    @else
+        @return 'h#{$from},' + headings($from+1, $to)
