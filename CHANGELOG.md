@@ -1,6 +1,6 @@
 # upcoming (5.3.1)
 
-* Update Readme
+* Update README
 
 # 5.3.0
 
