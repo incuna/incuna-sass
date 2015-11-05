@@ -1,7 +1,3 @@
-# upcoming (5.3.1)
-
-* Update README
-
 # 5.3.0
 
 * Add new headings loop function
