@@ -1,4 +1,4 @@
-# upcoming (5.3.0)
+# 5.3.0
 
 * Add new headings loop function
 
