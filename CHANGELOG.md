@@ -1,3 +1,7 @@
+# Upcoming
+
+* Remove @warn from link helpers because they are annoying
+
 # 5.2.3
 
 * BUGFIX: fix link and font-face mixins again, but properly this time (use == not =)
