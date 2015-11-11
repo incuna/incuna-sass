@@ -1,3 +1,7 @@
+# Upcoming
+
+* Remove @warn from link helpers because they are printed even when the extensions aren't being used (and it's annoying)
+
 # 5.3.0
 
 * Add new headings loop function
