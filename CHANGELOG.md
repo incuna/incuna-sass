@@ -1,3 +1,7 @@
+# [upcoming 5.3.2]
+
+* Fix bug with line-height of input[type="file"]
+
 # 5.3.1
 
 * Remove @warn from link helpers because they are printed even when the extensions aren't being used (and it's annoying)
