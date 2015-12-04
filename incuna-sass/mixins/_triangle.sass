@@ -17,15 +17,15 @@
 // $position: centered | from-top | from-bottom | from-left | from-right
 //    -- default: centered
 // $position-value: px/rem(px)
-//    -- default: 'none'
-//    If using the default of 'centered', this is not required
+//    -- default: none
+//    If using the default of centered, this is not required
 //    If using any other position, this is required in px/rem(px)/%
-// $pseudo: 'before' | 'after'
-//   -- default: 'after'
+// $pseudo: before | after
+//   -- default: after
 
 // Mixin use examples
 // ==================================
-// 15px triangle on the bottom middle of an element (default position:
+// 15px triangle on the bottom middle of an element:
 // @include triangle(green, 15px, 15px)
 //
 // 10px triangle on the right middle of an element:
@@ -36,7 +36,6 @@
 //
 // Narrow tall triangle on the bottom of an element, 5px from the right:
 // @include triangle(green, 5px, 15px, bottom, from-right, 5px)
-//
 
 @mixin triangle($color: #000, $width: 10px, $height: $width, $location: bottom, $position: centered, $position-value: none, $pseudo: after)
     position: relative
