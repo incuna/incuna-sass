@@ -26,7 +26,7 @@
 // Mixin use examples
 // ==================================
 // 15px triangle on the bottom middle of an element:
-// @include triangle(green, 15px, 15px)
+// @include triangle(green, 15px)
 //
 // 10px triangle on the right middle of an element:
 // @include triangle (green, 10px, 10px, right)
@@ -66,8 +66,8 @@
             bottom: 100%
             border: solid transparent
                 width: $width
-                bottom-width: $height
                 top-width: 0
+                bottom-width: $height
                 bottom-color: $color
 
         @if ($location == "left" or $location == "right")
@@ -91,6 +91,6 @@
             left: 100%
             border: solid transparent
                 width: $width
-                left-width: $height
                 right-width: 0
+                left-width: $height
                 left-color: $color
