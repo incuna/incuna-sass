@@ -1,0 +1,96 @@
+// CSS TRIANGLE
+// Include this mixin on the element you want to have a triangle on it
+// By default the arrow is centered on the bottom of an element, change mixin
+// options to amend it's location and position
+
+// Mixin arguments
+// ==================================
+// $color: hex/variable/named color.
+//    -- default: #000
+// $width: px/rem(px)
+// $height: px/rem(px)
+//    -- default: 10px
+//    Increase width to create a wider arrow or height to 
+//    create a narrower arrow. Include the unit in the argument.
+// $location: bottom | top | left | right
+//    -- default: bottom
+// $position: middle | from-top | from-bottom | from-left | from-right
+//    -- default: middle
+// $position-value: px/rem(px)
+//    -- default: none
+//    If using the default of middle, this is not required
+//    If using any other position, this is required in px/rem(px)/%
+// $pseudo: before | after
+//   -- default: after
+
+// Mixin use examples
+// ==================================
+// 15px triangle on the bottom middle of an element:
+// @include triangle(bottom, middle, green, 15px)
+//
+// 10px triangle on the right middle of an element:
+// @include triangle (right, middle, green)
+//
+// 15px triangle on the left of an element, 20px from the top:
+// @include triangle(left, from-top, green, 15px, 15px, 20px)
+//
+// Narrow tall triangle on the bottom of an element, 5px from the right:
+// @include triangle(bottom, from-right, green, 5px, 15px, 5px)
+
+@mixin triangle($location: bottom, $position: middle, $color: #000, $width: 10px, $height: $width, $position-value: none, $pseudo: after)
+    position: relative
+    &::#{$pseudo}
+        content: ''
+        height: 0
+        width: 0
+        position: absolute
+
+        @if ($location == "bottom" or $location == "top")
+            @if $position == "middle"
+                @include transform(translateX(-50%))
+                left: 50%
+            @else if $position == "from-left"
+                left: $position-value
+            @else if $position == "from-right"
+                right: $position-value
+
+        @if $location == "bottom"
+            top: 100%
+            border: solid transparent
+                width: $width
+                top-width: $height
+                bottom-width: 0
+                top-color: $color
+
+        @if $location == "top"
+            bottom: 100%
+            border: solid transparent
+                width: $width
+                top-width: 0
+                bottom-width: $height
+                bottom-color: $color
+
+        @if ($location == "left" or $location == "right")
+            @if $position == "middle"
+                @include transform(translateY(-50%))
+                top: 50%
+            @else if $position == "from-top"
+                top: $position-value
+            @else if $position == "from-bottom"
+                bottom: $position-value
+
+        @if $location == "left"
+            right: 100%
+            border: solid transparent
+                width: $width
+                right-width: $height
+                left-width: 0
+                right-color: $color
+
+        @if $location == "right"
+            left: 100%
+            border: solid transparent
+                width: $width
+                right-width: 0
+                left-width: $height
+                left-color: $color
