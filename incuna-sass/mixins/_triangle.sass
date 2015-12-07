@@ -14,11 +14,11 @@
 //    create a narrower arrow. Include the unit in the argument.
 // $location: bottom | top | left | right
 //    -- default: bottom
-// $position: centered | from-top | from-bottom | from-left | from-right
-//    -- default: centered
+// $position: middle | from-top | from-bottom | from-left | from-right
+//    -- default: middle
 // $position-value: px/rem(px)
 //    -- default: none
-//    If using the default of centered, this is not required
+//    If using the default of middle, this is not required
 //    If using any other position, this is required in px/rem(px)/%
 // $pseudo: before | after
 //   -- default: after
@@ -26,18 +26,18 @@
 // Mixin use examples
 // ==================================
 // 15px triangle on the bottom middle of an element:
-// @include triangle(green, 15px)
+// @include triangle(bottom, middle, green, 15px)
 //
 // 10px triangle on the right middle of an element:
-// @include triangle (green, 10px, 10px, right)
+// @include triangle (right, middle, green)
 //
 // 15px triangle on the left of an element, 20px from the top:
-// @include triangle(green, 15px, 15px, left, from-top, 20px)
+// @include triangle(left, from-top, green, 15px, 15px, 20px)
 //
 // Narrow tall triangle on the bottom of an element, 5px from the right:
-// @include triangle(green, 5px, 15px, bottom, from-right, 5px)
+// @include triangle(bottom, from-right, green, 5px, 15px, 5px)
 
-@mixin triangle($color: #000, $width: 10px, $height: $width, $location: bottom, $position: centered, $position-value: none, $pseudo: after)
+@mixin triangle($location: bottom, $position: middle, $color: #000, $width: 10px, $height: $width, $position-value: none, $pseudo: after)
     position: relative
     &::#{$pseudo}
         content: ''
@@ -46,7 +46,7 @@
         position: absolute
 
         @if ($location == "bottom" or $location == "top")
-            @if $position == "centered"
+            @if $position == "middle"
                 @include transform(translateX(-50%))
                 left: 50%
             @else if $position == "from-left"
@@ -71,7 +71,7 @@
                 bottom-color: $color
 
         @if ($location == "left" or $location == "right")
-            @if $position == "centered"
+            @if $position == "middle"
                 @include transform(translateY(-50%))
                 top: 50%
             @else if $position == "from-top"
