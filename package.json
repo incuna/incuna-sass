@@ -2,6 +2,7 @@
   "name": "incuna-sass",
   "version": "5.3.2",
   "description": "Incuna Sass library",
+  "main": "node/index.js",
   "repository": {
     "type": "git",
     "url": "incuna/incuna-sass.git"
