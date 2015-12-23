@@ -1,6 +1,6 @@
 # Incuna Sass Mixin Library
 
-*This is a sass libary of useful mixins maintained by Incuna. It is compatible with ruby Sass and node-sass/libsass, the latter being the preferred option*
+*This is a sass library of useful mixins maintained by Incuna. It is compatible with ruby Sass and node-sass/libsass, the latter being the preferred option*
 
 # Contents
 - [Requirements](#requirements)
