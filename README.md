@@ -91,7 +91,7 @@ grunt.initConfig({
 ```
 
 ## Stylesheet usage
-Once you have declared your import paths corrcetly, incuna-sass will be available to import in your sass files like this:
+Once you have declared your import paths correctly, incuna-sass will be available to import in your sass files like this:
 
 ```
 @import "incuna-sass";
