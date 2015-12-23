@@ -104,8 +104,6 @@ All development on incuna-sass should be made via github bug reports and pull re
 ## Local checkout
 To make updates and develop on incuna-sass you'll likely want to link a checked out version of the git repoistory into your own project, rather than use the standard installation. This is easy to do via bower or npm.
 
-### Link a local git repo to bower or npm
-
 1. `git clone -p incuna/incuna-sass`
 1. `cd incuna-sass`
 1. `bower link` or `npm link`
