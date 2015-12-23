@@ -1,33 +1,128 @@
-# Requirements
-`sass >= 3.3.0.rc.1`
+# Incuna Sass Mixin Library
 
-~~`compass >= 1.0.0.alpha.17`~~ (Compass dependency was removed in 5.0.0 - use release 4.3.0 for Compass projects)
+*This is a sass library of useful mixins maintained by Incuna. It is compatible with ruby Sass and node-sass/libsass, the latter being the preferred option*
+
+# Contents
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Basic Usage](#basic-usage)
+  - [Grunt](#grunt-usage)
+  - [Using in Stylesheets](#stylesheet-usage)
+- [Development](#development)
+  - [Local checkout](#local-checkout)
+  - [Releases](#releases)
+- [Version 5](#version-5)
+
+# Requirements
+
+### Node-sass
+* `node >= 0.12`
+* `node-sass >= 3.4.1`
+* `grunt >= 0.4.5`
+
+###Ruby sass
+* `sass >= 3.3.0.rc.1`
+* ~~`compass >= 1.0.0.alpha.17`~~ (Compass dependency was removed in 5.0.0 - use release 4.3.0 for Compass projects)
 
 # Installation
-1. `bower install incuna-sass --save`
-2. For legacy projects (`<= 4.3.0`): add the path to the installed package to your config.rb/Gruntfile.js e.g. `add_import_path = 'lib/incuna-sass'`
+Incuna sass can be installed via npm or bower
 
-# Local checkout
-To use a local checkout as your installed version is very easy to do.
+```
+bower install incuna-sass --save
+```
+or
+```
+npm install --save-dev incuna/incuna-sass
+```
+
+# Usage
+
+## Basic Usage
+
+To use incuna-sass with tools like gulp.js, Grunt, or directly with node-sass, provide the path to incuna-sass in your Sass config. There are a couple of convenience methods for this, depending on whether you want Sass to include additional directories or not.
+
+### includePaths Property
+
+The `includePaths` property returns an array of incuna-sass paths to use in your config.
+
+```
+var incunaSass = require('incuna-sass');
+incunaSass.includePaths // Array of folder paths
+```
+
+## Grunt usage
+### Using grunt-sass
+The grunt-sass task uses node-sass (LibSass) underneath, and is the recommended way to use Grunt with incuna-sass.
+
+Example config:
+```
+grunt.initConfig({
+  sass: {
+    dist: {
+      options: {
+        includePaths: require('incuna-sass').includePaths
+      },
+      files: {
+        'path/to/output.css': 'path/to/input.scss'
+      }
+    }
+  }
+});
+```
+
+### Using grunt-contrib-sass
+If you are using the Ruby version of Sass with node-bourbon, then you will need to use the grunt-contrib-sass task instead.
+
+Example config:
+```
+grunt.initConfig({
+  sass: {
+    dist: {
+      options: {
+        loadPath: require('incuna-sass').includePaths
+      },
+      files: {
+        'path/to/output.css': 'path/to/input.scss'
+      }
+    }
+  }
+});
+```
+
+## Stylesheet usage
+Once you have declared your import paths correctly, incuna-sass will be available to import in your sass files like this:
+
+```
+@import "incuna-sass";
+```
+
+# Development
+
+All development on incuna-sass should be made via github bug reports and pull requests.
+
+## Local checkout
+To make updates and develop on incuna-sass you'll likely want to link a checked out version of the git repoistory into your own project, rather than use the standard installation. This is easy to do via bower or npm.
 
 1. `git clone -p incuna/incuna-sass`
 1. `cd incuna-sass`
-1. `bower link`
+1. `bower link` or `npm link`
 1. `cd project_dir`
-1. `bower uninstall incuna-sass && bower link incuna-sass`
+1. `bower uninstall incuna-sass && bower link incuna-sass` or `npm uninstall incuna-sass && npm link incuna-sass`
 
-This creates a symlink to the your checkout allowing you to edit the bower
-installed version.
+This creates a symlink in your bower/npm packages folder to the folder containing your git reposioroy, allowing you to edit the incuna-sass source and see changes reflected in your project.
 
-# Releases
-To release a new version
+## Releases
+When you've done some development, you'll need to release a new version of incuna-sass.
 
-1. Increment the version in `bower.json`
+Follow these steps to release a new version
+
+1. Increment the version in `bower.json` and `package.json`
 2. Edit `CHANGELOG.md` with changes since last release
 3. Tag the repository with the version number: e.g. `git tag 2.1.4`
 4. Remember to push the tags: `git push --tags`
 
-# Incuna-sass Version 5
+# Version 5
 Incuna-sass is getting a bit of an overhaul.
 
 Incuna-sass 5.0.0 removes compass dependent code from the Incuna-sass library. This means the following files have been removed and will not be supported:

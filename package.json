@@ -1,0 +1,28 @@
+{
+  "name": "incuna-sass",
+  "version": "5.3.2",
+  "description": "Incuna Sass library",
+  "main": "node/index.js",
+  "repository": {
+    "type": "git",
+    "url": "incuna/incuna-sass.git"
+  },
+  "keywords": [
+    "sass",
+    "css"
+  ],
+  "license": "MIT",
+  "author": "Graham Gilchrist <graham@incuna.com> (http://www.incuna.com)",
+  "bugs": {
+    "url": "https://github.com/incuna/incuna-sass/issues"
+  },
+  "contributors": [
+    "Perry Roper <perryroper@gmail.com>",
+    "Graham Gilchrist <graham@incuna.com>",
+    "Beth Menzies <beth@incuna.com>",
+    "Paula Norris <paula@incuna.com>"
+  ],
+  "devDependencies": {
+    "node-sass": "3.4.1"
+  }  
+}

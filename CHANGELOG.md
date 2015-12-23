@@ -1,3 +1,7 @@
+# 5.4.0
+
+* Add support to install via npm
+
 # 5.3.2
 
 * Add a CSS triangle mixin
