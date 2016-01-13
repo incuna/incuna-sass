@@ -1,3 +1,7 @@
+# Upcoming
+
+* Fix mixins.sass to include the font-face mixin import which was missing
+
 # 5.4.0
 
 * Add support to install via npm
