@@ -1,4 +1,4 @@
-# Upcoming
+# 5.4.1
 
 * Fix mixins.sass to include the font-face mixin import which was missing
 
