@@ -1,3 +1,9 @@
+# Upcoming
+
+* Add retina mixin to add retina background images
+* Move media.sass to the legacy folder as it is compass dependent
+* Rename `hidpi-image` mixin to `legacy-hidpi-image`
+
 # 5.4.1
 
 * Fix mixins.sass to include the font-face mixin import which was missing
