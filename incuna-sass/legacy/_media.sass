@@ -7,7 +7,7 @@ $hidpi: "print, (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 
 // Print
 $print: "print"
 
-@mixin hidpi-image($image, $use-dimensions: true)
+@mixin legacy-hidpi-image($image, $use-dimensions: true)
     $image-1x: '1x/#{$image}'
     $image-2x: '2x/#{$image}'
     $height: image-height($image-1x)
