@@ -1,0 +1,9 @@
+@mixin media($expression)
+    @media #{$expression}
+        @content
+
+// Example usage
+// $px600: "screen and (min-width: 600px)"
+// 
+// @include media($px600)
+//     properties here
