@@ -1,14 +1,10 @@
-# Upcoming
+# 5.4.2
 
-* Remove deprecated clearfix helper from forms.sass
+* BUGFIX: Remove deprecated clearfix helper from forms.sass
 * Add modern clearfix mixin to project
 * Move non-compass dependant media.sass back to mixins
-* Rename media.sass in legacy to hidpi-image.sass
-
-# Upcoming
-
 * Add retina mixin to add retina background images
-* Move media.sass to the legacy folder as it is compass dependent
+* Rename media.sass in legacy to hidpi-image.sass
 * Rename `hidpi-image` mixin to `legacy-hidpi-image`
 
 # 5.4.1
