@@ -26,22 +26,16 @@ $horizontal-label-margin: rem(20px) !default
 $help-text-font-size: 80% !default
 
 form
-    @extend %clearfix
     margin: $form-margin
 
 fieldset
-    @extend %clearfix
     padding: 0
     margin: 0
     border: 0
 
 .control-group
-    @extend %clearfix
     margin:
         bottom: $field-margin
-
-.controls
-    @extend %clearfix
 
 // Groups of fields with labels on top (legends)
 legend
@@ -238,10 +232,6 @@ $form-error: red !default
         textarea
             color: $form-error
             border-color: $form-error
-
-// FORM ACTIONS
-.form-actions
-    @extend %clearfix
 
 // HELP TEXT
 .help-block,
