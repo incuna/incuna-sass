@@ -1,3 +1,7 @@
+# 5.4.3
+
+* BUGFIX: Fix node includePaths() function to return corrcet location
+
 # 5.4.2
 
 * BUGFIX: Remove deprecated clearfix helper from forms.sass
