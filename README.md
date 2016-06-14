@@ -117,7 +117,7 @@ When you've done some development, you'll need to release a new version of incun
 
 Follow these steps to release a new version
 
-1. Increment the version in `bower.json` and `package.json`
+1. Increment the version in `package.json`
 2. Edit `CHANGELOG.md` with changes since last release
 3. Tag the repository with the version number: e.g. `git tag 2.1.4`
 4. Remember to push the tags: `git push --tags`
