@@ -16,6 +16,6 @@ function includePaths() {
 }
 
 module.exports = {
-    // run modulePath() function immediately and return result as exported value
+    // run includePaths() function immediately and return result as exported value
     includePaths: includePaths()
 };
