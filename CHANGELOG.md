@@ -1,3 +1,10 @@
+# Upcoming
+
+* Add url functions for creating locally defined functions
+    * image-url function
+    * font-url function
+    * svg-url function
+
 # 5.4.3
 
 * BUGFIX: Fix node includePaths() function to return corrcet location
