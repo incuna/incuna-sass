@@ -7,12 +7,12 @@ $relative-svg-dir: ../images/svg/ !default
 
 // Set file path for fonts so you can use font-url
 @function font-url($path)
-    @return url('#{relative-font-dir}' + $path)
+    @return url($relative-font-dir + $path)
 
 // Set file path for images so you can use image-url
 @function image-url($path)
-    @return url('#{$relative-image-dir}' + $path)
+    @return url($relative-image-dir + $path)
 
 // Set file path for images so you can use image-url
 @function svg-url($path)
-    @return url('#{$relative-svg-dir}' + $path)
+    @return url($relative-svg-dir + $path)
