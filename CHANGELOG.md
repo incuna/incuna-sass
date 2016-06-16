@@ -4,6 +4,10 @@
     * box-sizing: border-box
     * relative line-height
     * overwrite browser button styles
+* Add url functions for creating locally defined functions
+    * image-url function
+    * font-url function
+    * svg-url function
 
 # 5.4.3
 
