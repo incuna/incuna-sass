@@ -1,5 +1,9 @@
 # Upcoming
 
+* Create incuna-normalise file to add basic styles we use on all projects
+    * box-sizing: border-box
+    * relative line-height
+    * overwrite browser button styles
 * Add url functions for creating locally defined functions
     * image-url function
     * font-url function
