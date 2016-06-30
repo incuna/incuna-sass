@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add grid mixin for creating grid backgrounds with css gradients
+
 # 5.5.1
 
 * BUGFIX: make url function variables strings

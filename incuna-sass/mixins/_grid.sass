@@ -1,0 +1,37 @@
+// Mixin to add a grid background to elements
+
+// Can be used to create a grid lines on their own or with a solid color background
+// Direction can be set to create just horizontal or just vertical lines, or left
+// as 'both' to create a grid
+
+// Example usage:
+// .element
+//     @include grid(4px, blue)
+// will create a transparent background with a grid that has 4px squares and 1px opaque
+// blue grid lines in both directions
+
+// .element
+//     @include grid(10px, red, 0.4, orange)
+// will create an orange background with a grid that has 10px squares and 1px red lines
+// at 40% opacity
+
+// .element
+//     @include grid(20px, green, 1, transparent, 5px, horizontal)
+// will create a transparent background with 5px opaque green lines going horizontally
+// across the page 20px apart
+
+@mixin grid($grid-size, $grid-color, $grid-opacity: 1, $bg-color: transparent, $line-thickness: 1px, $direction: both)
+    background:
+        color: $bg-color
+    @if $direction == horizontal
+        @include background(linear-gradient(rgba($grid-color, $grid-opacity) $line-thickness, transparent $line-thickness))
+        background:
+            size: #{$grid-size} #{$grid-size}
+    @else if $direction == vertical
+        @include background(linear-gradient(90deg, rgba($grid-color, $grid-opacity) $line-thickness, transparent $line-thickness))
+        background:
+            size: #{$grid-size} #{$grid-size}
+    @else
+        @include background(linear-gradient(rgba($grid-color, $grid-opacity) $line-thickness, transparent $line-thickness), linear-gradient(90deg, rgba($grid-color, $grid-opacity) $line-thickness, transparent $line-thickness))
+        background:
+            size: #{$grid-size} #{$grid-size}, #{$grid-size} #{$grid-size}
