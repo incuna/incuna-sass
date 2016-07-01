@@ -1,4 +1,4 @@
-// Mixin to add a grid background to elements
+// Mixin to add a grid background to elements using css gradients
 
 // Can be used to create a grid lines on their own or with a solid color background
 // Direction can be set to create just horizontal or just vertical lines, or left
@@ -20,7 +20,7 @@
 // will create a transparent background with 5px opaque green lines going horizontally
 // across the page 20px apart
 
-@mixin grid($grid-size, $grid-color, $grid-opacity: 1, $bg-color: transparent, $line-thickness: 1px, $direction: both)
+@mixin bg-pattern-grid($grid-size, $grid-color, $grid-opacity: 1, $bg-color: transparent, $line-thickness: 1px, $direction: both)
     background:
         color: $bg-color
     @if $direction == horizontal
