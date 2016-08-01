@@ -1,5 +1,6 @@
 # Upcoming
 
+* Add svgstore icon sass to incuna normalise
 * Add grid mixin for creating grid pattern backgrounds with css gradients
 
 # 5.5.1
