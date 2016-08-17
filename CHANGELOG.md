@@ -1,4 +1,4 @@
-# Upcoming
+# 5.7.0
 
 * Add hover state variables
 
