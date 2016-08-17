@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add hover state variables
+
 # 5.6.0
 
 * Add svgstore icon sass to incuna normalise
