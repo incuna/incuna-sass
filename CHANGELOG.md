@@ -1,3 +1,7 @@
+# Upcoming
+
+* BREAKING CHANGE: Update svg file path to use svg-url
+
 # 5.7.0
 
 * Add hover state variables
