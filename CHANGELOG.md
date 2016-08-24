@@ -1,4 +1,4 @@
-# Upcoming
+# 6.0.0
 
 * BREAKING CHANGE: Update svg file path to use svg-url
 
