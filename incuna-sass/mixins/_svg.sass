@@ -29,7 +29,7 @@
 //     @include svg-element(my-svg, 20px, 40px)
 
 @mixin svg-element($file, $width: 100%, $height: $width)
-    background: image-url('svg/#{$file}.svg')
+    background: svg-url('#{$file}.svg')
         repeat: no-repeat
         size: contain
     width: $width
