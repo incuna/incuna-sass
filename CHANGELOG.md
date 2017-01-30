@@ -1,3 +1,7 @@
+# Upcoming
+
+* Add new mixin em-scale - to define font-size at different breakpoints to allow easier use of ems
+
 # 6.0.0
 
 * BREAKING CHANGE: Update svg file path to use svg-url
