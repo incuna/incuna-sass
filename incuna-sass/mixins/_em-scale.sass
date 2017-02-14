@@ -1,20 +1,21 @@
 // Mixin to define a font size scale to allow easier use of ems
 
 // Allows for as many different breakpoints and font sizes as needed
-// Only $font-base is required, mixin can be used without any 
-// $breakpoint-sizes-list arguments, but at least one breakpoint and 
-// font-size change should be added to make the mixin worth using
+// $font-base is required, also at least one breakpoint and 
+// font-size change must be added for the mixin to work
 
 // The mixin is designed mobile first, so $font-base should be your
-// mobile font size and $breakpoint-sizes-list should start with your 
+// mobile font size and $breakpoints-map should start with your 
 // smallest breakpoint and first font-size change, then continue in 
 // sequence from there
+
+// $breakpoints-map should be structured as $breakpoint: $font-size
 
 // Example usage:
 
 // .thing
-//     @include em-scale(14px, (('screen and (min-width: 768px)', 16px), 
-//          ('screen and (min-width: 1025px)', 20px)))
+//     @include em-scale(14px, ('screen and (min-width: 768px)': 16px, 
+//          'screen and (min-width: 1025px)': 20px))
 //     padding: 1em
 
 // the above will create an element with padding that scales to match the
@@ -26,14 +27,14 @@
 
 // You can also use variables to reference media query variables in your
 // project:
-//     @include em-scale(14px, (($px768, 16px), ($px1025, 20px)))
+//     @include em-scale(14px, ($px768: 16px, $px1025: 20px))
 // or
-//     @include em-scale(14px, (($tablet, 16px), ($desktop, 20px)))
+//     @include em-scale(14px, ($tablet: 16px, $desktop: 20px))
 
-@mixin em-scale($font-base, $breakpoints-sizes-list: ())
+@mixin em-scale($font-base, $breakpoints-map)
     font:
         size: $font-base
-    @each $change in $breakpoints-sizes-list
-        @include media(#{nth($change, 1)})
+    @each $breakpoint, $font-size in $breakpoints-map
+        @include media($breakpoint)
             font:
-                size: nth($change, 2)
+                size: $font-size
