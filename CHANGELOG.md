@@ -1,6 +1,7 @@
 # Upcoming
 
 * Add new mixin em-scale - to define font-size at different breakpoints to allow easier use of ems
+* Add new font-smoothing mixin - to set -moz and -webkit font-smoothing properties
 
 # 6.0.0
 

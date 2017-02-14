@@ -1,0 +1,27 @@
+// Font smoothing mixin to add / remove antialising -moz- and -webkit- 
+// font smoothing properties to text
+
+// It's important to note that font-smoothing is not recommended for all 
+// situations and is not supported by all browsers
+// see: http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+
+// Using font-smoothing antialised can be useful if, for example, you're 
+// using white font on a dark background and the browser is rendering it
+// too bold
+
+// To set font-smoothing to antialiased 
+//     .thing
+//         @include font-smoothing
+// antialised is the default setting so no arguments are necessary
+
+// To set font-smoothing to auto, or overwrite antialised
+//     .thing
+//         @include font-smoothing(auto)
+
+@mixin font-smoothing($type: antialiased)
+    @if $type == antialiased
+        -moz-osx-font-smoothing: grayscale
+        -webkit-font-smoothing: antialiased
+    @else 
+        -moz-osx-font-smoothing: auto
+        -webkit-font-smoothing: auto
