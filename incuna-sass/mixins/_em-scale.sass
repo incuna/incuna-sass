@@ -1,17 +1,21 @@
 // Mixin to define a font size scale to allow easier use of ems
 
-// Allows for up to 5 different breakpoints and 6 font sizes
-// Only one breakpoint is required (and two different font sizes)
+// Allows for as many different breakpoints and font sizes as needed
+// $font-base is required, also at least one breakpoint and 
+// font-size change must be added for the mixin to work
 
-// The mixin is designed mobile first, so $font-size-1 should be your
-// mobile font size and $breakpoint-1 your smallest breakpoint, then add
-// any remaining required font sizes and breakpoints incrementally
+// The mixin is designed mobile first, so $font-base should be your
+// mobile font size and $breakpoints-map should start with your 
+// smallest breakpoint and first font-size change, then continue in 
+// sequence from there
+
+// $breakpoints-map should be structured as $breakpoint: $font-size
 
 // Example usage:
 
 // .thing
-//     @include em-scale(14px, 'screen and (min-width: 768px)', 16px, 
-//          'screen and (min-width: 1025px)', 20px)
+//     @include em-scale(14px, ('screen and (min-width: 768px)': 16px, 
+//          'screen and (min-width: 1025px)': 20px))
 //     padding: 1em
 
 // the above will create an element with padding that scales to match the
@@ -23,30 +27,14 @@
 
 // You can also use variables to reference media query variables in your
 // project:
-//     @include em-scale(14px, $px768, 16px, $px1025, 20px)
+//     @include em-scale(14px, ($px768: 16px, $px1025: 20px))
 // or
-//     @include em-scale(14px, $tablet, 16px, $desktop, 20px)
+//     @include em-scale(14px, ($tablet: 16px, $desktop: 20px))
 
-
-@mixin em-scale($font-size-1, $breakpoint-1, $font-size-2, $breakpoint-2: false, $font-size-3: false, $breakpoint-3: false, $font-size-4: false, $breakpoint-4: false, $font-size-5: false, $breakpoint-5: false, $font-size-6: false)
+@mixin em-scale($font-base, $breakpoints-map)
     font:
-        size: $font-size-1
-    @include media($breakpoint-1)
-        font:
-            size: $font-size-2
-    @if $breakpoint-2
-        @include media($breakpoint-2)
+        size: $font-base
+    @each $breakpoint, $font-size in $breakpoints-map
+        @include media($breakpoint)
             font:
-                size: $font-size-3
-    @if $breakpoint-3
-        @include media($breakpoint-3)
-            font:
-                size: $font-size-4
-    @if $breakpoint-4
-        @include media($breakpoint-2)
-            font:
-                size: $font-size-3
-    @if $breakpoint-5
-        @include media($breakpoint-3)
-            font:
-                size: $font-size-4
+                size: $font-size
