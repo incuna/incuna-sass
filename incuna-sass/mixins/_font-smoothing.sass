@@ -22,6 +22,8 @@
     @if $type == antialiased
         -moz-osx-font-smoothing: grayscale
         -webkit-font-smoothing: antialiased
-    @else 
+    @else if $type == auto
         -moz-osx-font-smoothing: auto
         -webkit-font-smoothing: auto
+    @else
+        @warn "Argument must be antialiased or auto was ${$type}"
