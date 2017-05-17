@@ -1,4 +1,4 @@
-# Upcoming
+# 7.0.0
 
 * BREAKING CHANGE: Update version of necolas' normalize to v7.0.0
 
