@@ -1,3 +1,7 @@
+# Upcoming
+
+* BREAKING CHANGE: Update version of necolas' normalize to v7.0.0
+
 # 6.1.0
 
 * Add new mixin em-scale - to define font-size at different breakpoints to allow easier use of ems
