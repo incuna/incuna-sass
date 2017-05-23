@@ -1,3 +1,7 @@
+# Upcoming
+
+* BREAKING CHANGE: Update font-face mixin to include font-weight and font-style for each file added. This will allow the font to be set using just `font-family` and styles / weights to be set with `font-style` and `font-weight`. This removes the need for the `font` mixin, which has been removed
+
 # 7.0.0
 
 * BREAKING CHANGE: Update version of necolas' normalize to v7.0.0
