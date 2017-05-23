@@ -1,3 +1,8 @@
+# Upcoming
+
+* Add imports file for typical incuna-sass set up, so files don't need to be added individually
+* Move helpers to mixins folder, these files have been mixins since version 5.1.4 and the distinction is no longer relevant
+
 # 7.0.0
 
 * BREAKING CHANGE: Update version of necolas' normalize to v7.0.0
