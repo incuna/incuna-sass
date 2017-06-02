@@ -1,32 +1,9 @@
-// This is a stripped down version of the bootstrap styles
-// Not everything will be here, but the most useful parts are
-
-// The default output of a crispy form should match the bootstrap markup
-// You will only need to change the classes on the <form>
-// Three types of forms
-// Bootstrap provides simple markup and styles for two styles of common web forms.
-
-// Name                 Class                            Description
-// Vertical (default)   .form-vertical (not required)    Stacked, left-aligned labels over controls
-// Horizontal           .form-horizontal                 Float left, right-aligned labels on same line as controls
-
-$form-margin: 0 0 rem(20px) 0 !default
-
-$label-margin: rem(5px) !default
-
-$field-font-size: $font-base !default
-$field-width: rem(250px) !default
-$field-height: rem(30px) !default
-$field-padding: rem(4px) !default
-$field-margin: rem(20px) !default
-
-$horizontal-label-width: rem(140px) !default
-$horizontal-label-margin: rem(20px) !default
-
+$form-max-width: 700px !default
 $help-text-font-size: 80% !default
+$form-error-color: red !default
 
 form
-    margin: $form-margin
+    max-width: $form-max-width
 
 fieldset
     padding: 0
@@ -34,277 +11,75 @@ fieldset
     border: 0
 
 .control-group
+    width: 100%
     margin:
-        bottom: $field-margin
+        bottom: 1em
 
 // Groups of fields with labels on top (legends)
 legend
     display: block
-    width: 100%
-    padding: 0
-    margin-bottom: $field-margin
-    line-height: $field-margin
-    border: 0
-    border-bottom: 1px solid
-
-// Identify controls by their labels
-label
-    display: block
-    margin:
-        bottom: $label-margin
-    &[for]
-        cursor: pointer
-
-// Inputs, Textareas, Selects
-@mixin field-selectors
-    input,
-    textarea,
-    select
-        @content
-
-@mixin button-inputs
-    button,
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"]
-        @content
-
-@mixin text-inputs
-    input
-        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
-        &[type="color"],
-        &[type="date"],
-        &[type="datetime"],
-        &[type="datetime-local"],
-        &[type="email"],
-        &[type="month"],
-        &[type="number"],
-        &[type="password"],
-        &[type="search"],
-        &[type="tel"],
-        &[type="text"],
-        &[type="time"],
-        &[type="url"],
-        &[type="week"]
-            @content
-
-@include field-selectors
-    display: inline-block
-    vertical-align: middle
-    width: $field-width
-    height: $field-height
-    padding: $field-padding
-    font:
-        size: $field-font-size
-    border: 1px solid
-    &:focus
-        outline: 0
-    // Inputs within a label
-    label &
-        display: block
-
-@include text-inputs
-    // Reset iOS text inputs
-    -webkit-appearance: none
-    -webkit-border-radius: 0
-
-// Mini reset for unique input types
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"]
-    width: auto
-    height: auto
-    padding: 0
-    margin: rem(3px) 0
-    border: 0
-    line-height: normal
-    cursor: pointer
-    .lt-ie8 &
-        margin:
-            top: 0
-
-// Reset the file input to browser defaults
-input[type="file"]
-    width: auto
-    padding: initial
-    line-height: initial
-    border: initial
-    background-color: initial
-
-// Help out input buttons
-input[type="button"],
-input[type="reset"],
-input[type="submit"]
-    width: auto
-    height: auto
-
-// Set the height of select and file controls to match text inputs
-select,
-input[type="file"]
-    // In IE7, the height of the select element cannot be changed by height, only font-size
-    height: rem(28px)
-    line-height: rem(28px)
-    .lt-ie8 &
-        //  For IE7, add top margin to align select with labels
-        margin:
-            top: rem(4px)
-
-// Reset line-height for IE
-input[type="file"]
-    .lt-ie10 &
-        line-height: rem(18px)
-
-// Chrome on Linux and Mobile Safari need background-color
-select
-    width: $field-width
-    background-color: #fff
-    // Make multiple select elements height not fixed
-    &[multiple],
-    &[size]
-        min-height: $field-height * 4
-        height: auto
 
 // Only resize textareas vertically
 // Make textarea height behave
 textarea
+    height: 4em
     resize: vertical
-    min-height: $field-height * 4
-    height: auto
 
 // Hidden inputs
 input[type="hidden"]
     display: none
 
-// CHECKBOXES & RADIOS
-
-// Indent the labels to position radios/checkboxes as hanging
-.radio,
-.checkbox
-    padding-left: rem(18px)
-
-.radio input[type="radio"],
-.checkbox input[type="checkbox"]
-    float: left
-    margin-left: rem(-18px)
-
-
-// Move the options list down to align with labels
-.controls
-    > .radio,
-    > .checkbox
-        &:first-child
-            // Has to be padding because margin collaspes
-            padding-top: $label-margin
-
-// Radios and checkboxes on same line
-.radio,
-.checkbox
-    &.inline
-        display: inline-block
-        vertical-align: middle
-        padding-top: $label-margin
-        margin-bottom: 0
-
-.radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline
-    // Space out consecutive inline controls
-    margin-left: $field-margin / 2
-
-// Disabled and read-only inputs
 input,
 select,
-textarea,
+textarea
+    width: 100%
+    padding: 5px
+    border: 1px solid #ccc
+
+    // Disabled and read-only inputs
     &[disabled],
     &[readonly]
         cursor: not-allowed
 
-// FORM FIELD FEEDBACK STATES
-$form-error: red !default
-.control-group
-    // Error
-    &.error
-        > label,
-        .help-block,
-        .help-inline
-            color: $form-error
-        input,
-        select,
-        textarea
-            color: $form-error
-            border-color: $form-error
+.radio-input,
+.checkbox-input,
+.radio-label,
+.checkbox-label
+    display: inline-block
+    vertical-align: initial
+    width: auto
 
-// HELP TEXT
+.radio-input,
+.checkbox-input
+    margin:
+        right: 5px
+
+// Form errors and help text
+.error,
+.has-error
+    > label
+        color: $form-error-color
+    input,
+    select,
+    textarea
+        color: $form-error-color
+        border-color: $form-error-color
+
 .help-block,
-.help-inline
+.error-block
+    color: $form-error-color
+
+.error-block,
+.help-block,
+.help-text,
+.form-error
+    display: block
     font:
         size: $help-text-font-size
-
-.help-block
-    // Account for any element using help-block
-    display: block
     padding:
-        top: $field-margin / 2
+        top: 0.5em
+    margin: 0
 
-.help-inline
-    display: inline-block
-    vertical-align: middle
-    padding:
-        left: $field-margin / 4
-
-// Horizontal-specific styles
-%form-horizontal
-    input,
-    textarea,
-    select,
-    .help-inline
-        display: inline-block
-        vertical-align: middle
-        margin-bottom: 0
-
-    // Float the labels left
-    .control-label
-        float: left
-        width: $horizontal-label-width
-        padding-top: $label-margin
-        text-align: right
-
-    // Move over all input controls and content
-    .controls
-        margin-left: $horizontal-label-width + $horizontal-label-margin
-
-    // Move over buttons in .form-actions to align with .controls
-    .form-actions
-        padding-left: $horizontal-label-width + $horizontal-label-margin
-
-.form-horizontal
-    @extend %form-horizontal
-
-// Applied to form-fields where we want to hide the label from the directive.
-%label-hidden
-    .control-label
-        display: none
-.label-hidden
-    @extend %label-hidden
-
-// Applied to form-fields where we want to hide the help from the directive.
-%help-hidden
-    .help
-        display: none
-.help-hidden
-    @extend %help-hidden
-
-// Hide the asterisk and use the placeholder to display it.
-%asterisk-hidden
-    .asterisk
-        display: none
-.asterisk-hidden
-    @extend %asterisk-hidden
-
-%hide-field
-    // Hide the field and remove it from the DOM flow. Make sure it's still
-    // accessible, so don't use display:none.
-    @extend %visually-hidden
-
-%hide-fields
-    @include field-selectors
-        @extend %hide-field
+.form-error
+    margin:
+        bottom: 1em
