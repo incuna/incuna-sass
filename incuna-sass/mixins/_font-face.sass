@@ -21,18 +21,20 @@
 // .woff2 is an updated version of .woff and has limited support at the moment
 // .eot is an IE specific format that adds support for IE8 and below
 
-// Fonts of different weights / styles should be added separately
+// Fonts of different weights / styles should be added separately, but using the
+// same font-name
 
 // for example if you'd like your project to use Roboto across 
 // all browsers:
-//     @include font-face("roboto-regular", "Roboto-Regular", "roboto", "sans-serif")
-//     @include font-face("roboto-medium", "Roboto-Medium", "roboto", "sans-serif")
-//     @include font-face("roboto-bold-italic", "Roboto-Bold-Italic", "roboto", "sans-serif")
+//     @include font-face("roboto", 400, normal, "Roboto-Regular", "roboto", "sans-serif")
+//     @include font-face("roboto", 500, normal, "Roboto-Medium", "roboto", "sans-serif")
+//     @include font-face("roboto", bold, italic, "Roboto-Bold-Italic", "roboto", "sans-serif")
 
-// You can then apply this font using font-family: "font-name"
-// You can set the font weight or style (assuming you've added the
-// relevant files in a font-face mixin) using font-weight and font-style
-// as you would normally
+// You can then apply these fonts to your elements as normal:
+//     font:
+//         family: roboto
+//         weight: bold
+//         style: italic
 
 // IMPORTANT:
 // If you have several weights/styles of the same font make sure
