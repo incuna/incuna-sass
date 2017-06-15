@@ -1,6 +1,10 @@
 # Upcoming
 
 * BREAKING CHANGE: Update font-face mixin to include font-weight and font-style for each file added. This will allow the font to be set using just `font-family` and styles / weights to be set with `font-style` and `font-weight`. This removes the need for the `font` mixin, which has been removed
+* Strip down forms sass to be simpler and more useful
+* Add imports file for typical incuna-sass set up, so files don't need to be added individually
+* Move helpers to mixins folder, these files have been mixins since version 5.1.4 and the distinction is no longer relevant
+* Add typography components file to set some basic typography styles
 
 # 7.0.0
 
