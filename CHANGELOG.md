@@ -3,6 +3,7 @@
 * Strip down forms sass to be simpler and more useful
 * Add imports file for typical incuna-sass set up, so files don't need to be added individually
 * Move helpers to mixins folder, these files have been mixins since version 5.1.4 and the distinction is no longer relevant
+* Add typography components file to set some basic typography styles
 
 # 7.0.0
 
