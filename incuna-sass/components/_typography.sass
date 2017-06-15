@@ -3,12 +3,13 @@
 // https://github.com/AdamMarsden/simple-typography
 
 // Font Family
-$base-font-family: 'Lato' !default
+$base-font-family: sans-serif !default
 
 // Default font sizes
 $base-font-size: 16px !default
 
 $paragraph-size: 15px !default
+$paragraph-spacing: 1.25em !default
 
 $heading-size: 30px !default
 
@@ -21,9 +22,8 @@ body
 
 html,
 body
-    @include font($base-font-family)
     font:
-        // family: $base-font-family
+        family: $base-font-family
         size: $base-font-size
 
 // Headings
@@ -67,7 +67,7 @@ h6
 // Paragraphs
 p
     margin: 0
-        bottom: 1.25em
+        bottom: $paragraph-spacing
     font:
         size: $paragraph-size
     line-height: 1.4em
@@ -80,7 +80,7 @@ a
 ul,
 ol
     margin:
-        top: 1.25em
+        top: $paragraph-spacing
         right: 0
         bottom: 1.5em
         left: 0
