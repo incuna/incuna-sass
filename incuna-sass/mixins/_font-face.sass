@@ -6,60 +6,49 @@
 
 // Use the font-face mixin to add web fonts to your projects
 // introduce the arguments in the following manner:
-// @include font-face("font-name", "font-file-name", "folder-name", "font-category")
+// @include font-face("font-family", font-weight, font-style, "font-file-name", "folder-name", "font-category")
 // where 
-// font-name = the name you want to use for the font in your project
+// font-family = the name you will call this font in font-family.
+// font-weight = the weight of the font file you're adding - ie bold, light, 600
+// font-style = the style of the font file you're adding - ie normal, italic
 // font-file-name = the name of the font file in your project files
-// folder-name = the name of the parent folder containing your font file - usually named 
-//     to match font family name
+// folder-name = the name of the parent folder containing your font file -
+//       usually named to match font family name
 // font-category = serif, sans-serif, cursive, etc.
 
-// You can use the two optional arguments to add .woff2 and/or .eot formats to your mixin
+// You can use the two optional arguments to add .woff2 and/or .eot formats
+// to your mixin
 // .woff2 is an updated version of .woff and has limited support at the moment
 // .eot is an IE specific format that adds support for IE8 and below
 
-// Fonts of different weights / styles should be added separately
+// Fonts of different weights / styles should be added separately, but using the
+// same font-name
 
 // for example if you'd like your project to use Roboto across 
 // all browsers:
-//     @include font-face("roboto-regular", "Roboto-Regular", "roboto", "sans-serif")
-//     @include font-face("roboto-medium", "Roboto-Medium", "roboto", "sans-serif")
-//     @include font-face("roboto-bold-italic", "Roboto-Bold-Italic", "roboto", "sans-serif")
+//     @include font-face("roboto", 400, normal, "Roboto-Regular", "roboto", "sans-serif")
+//     @include font-face("roboto", 500, normal, "Roboto-Medium", "roboto", "sans-serif")
+//     @include font-face("roboto", bold, italic, "Roboto-Bold-Italic", "roboto", "sans-serif")
 
-// You can then use the font mixin to apply these fonts to your elements:
-//     @include font(roboto-regular)
+// You can then apply these fonts to your elements as normal:
+//     font:
+//         family: roboto
+//         weight: bold
+//         style: italic
 
-// I recommend setting font names as variables in your projects locally
-// to make it easier to set fonts, eg:
+// IMPORTANT:
+// If you have several weights/styles of the same font make sure
+// you give them the same font name so the weight / style can be set correctly
+// You can only apply font weights and styles that you have addedfiles for.
+// Setting the weight or style to something you have not provided a
+// font file for will result in faux browser styles
 
-// $font-main: font-name
-// .main
-//     @include font($font-main)
-
-// for different font-weights and styles:
-
-// $font-bold: font-name-bold
-// $font-medium-italic: font-name-medium-italic
-// .main
-//     h2
-//         @include font($font-bold)
-//     em
-//         @include font($font-medium-italic)
-
-// or for an accent font:
-
-// $font-fancy-script: fancy-script-font-name
-// .fancy-element
-//     @include font($font-fancy-script, cursive)
-
-// $font-formal-serif: formal-serif-font-name
-// .formal-element
-//     @include font($font-formal-serif, serif)
-
-@mixin font-face($style-name, $file, $family, $category: '', $woff2: false, $IE-8: false)
+@mixin font-face($font-family, $weight, $style, $file, $family, $category: '', $woff2: false, $IE-8: false)
     $filepath: $family + '/' + $file
     @font-face
-        font-family: '#{$style-name}'
+        // Font-family must be declared before src or weight / style won't work
+        font:
+            family: '#{$font-family}'
         // If / else statements must be nested so only one src property is output by the css
         // If both IE-8 and woff2 are required output this:
         @if $IE-8 and $woff2
@@ -73,10 +62,7 @@
         // If neither IE8 or woff2 support is required output this:
         @else
             src: font-url($filepath + ".woff") format('woff'), font-url($filepath + ".otf") format('opentype')
-
-// Use this mixin to set fonts in your project
-@mixin font($style-name, $category: sans-serif)
-    font:
-        family: '#{$style-name}', $category
-        style: normal
-        weight: normal
+        // Weight and style must be below the src declaration or will not work
+        font:
+            weight: $weight
+            style: $style
