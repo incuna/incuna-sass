@@ -1,4 +1,4 @@
-# Upcoming
+# 8.0.0
 
 * BREAKING CHANGE: Update font-face mixin to include font-weight and font-style for each file added. This will allow the font to be set using just `font-family` and styles / weights to be set with `font-style` and `font-weight`. This removes the need for the `font` mixin, which has been removed
 * Strip down forms sass to be simpler and more useful

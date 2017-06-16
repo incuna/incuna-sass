@@ -1,6 +1,6 @@
 {
   "name": "incuna-sass",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "Incuna Sass library",
   "main": "node/index.js",
   "repository": {
